@@ -10,9 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use damainpotepuh\CoreBundle\Entity\Image;
 use damainpotepuh\CoreBundle\Models\ImageManager;
-use damainpotepuh\CoreBundle\Entity\Ad;
-use damainpotepuh\CoreBundle\Models\AdManager;
-use damainpotepuh\StaticBundle\Form\AdType;
 use damainpotepuh\CoreBundle\Entity\Product;
 use damainpotepuh\CoreBundle\Models\ProductManager;
 
@@ -26,14 +23,6 @@ class DefaultController extends Controller
     private function getImageManager()
     {
         return $this->container->get('damainpotepuh.image_manager');
-    }
-    
-    /**
-     * @return AdManager
-     */
-    private function getAdManager()
-    {
-        return $this->container->get('damainpotepuh.ad_manager');
     }
     
     /**
@@ -60,19 +49,7 @@ class DefaultController extends Controller
     public function aboutAction()
     {
         return array();
-    }
-    
-    /**
-     * @Route("/artikli", name="_artikli")
-     * @Template()
-     */
-    public function productsAction()
-    {
-        $products = $this->getProductManager()->findAllProducts();
-
-        return array( 'products' => $products);
-    }
-    
+    }    
     
     /**
      * @Route("/galerija", name="_galerija")
@@ -95,59 +72,13 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/zmenkarije", name="_zmenkarije")
+     * @Route("/artikli", name="_artikli")
      * @Template()
      */
-    public function datingAction()
+    public function productsAction()
     {
-        $ads = $this->getAdManager()->findAllads();
+        $products = $this->getProductManager()->findAllProducts();
 
-        return array( 'ads' => $ads);
+        return array( 'products' => $products);
     }
-    
-    /**
-     * @Route("/ad/add", name="_add_ad")
-     * @Route("/ad/edit/{id}", name="_edit_ad", requirements={"id" = "\d+"})
-     * @Template()
-     */
-    public function editAdAction(Request $request, $id = null)
-    {
-        if (is_null($id)) {
-            $entity = $this->getAdManager()->createAd();
-        } else {
-            $entity = $this->getAdAction($id);
-        }
-
-        $form  = $this->createForm(new AdType(), $entity);
-
-        if ($request->isMethod('POST')) {
-            $form->bind($request);
-            if ($form->isValid()) {
-                $this->getAdManager()->saveAd($entity);
-                $this->get('session')->getFlashBag()->add('success', 'Oglas je bil uspešno shranjen!');
-                return $this->redirect($this->generateUrl('_zmenkarije'));
-            }
-        }
-
-        return array(
-            'form'   => $form->createView(),
-            'ad' => $entity,
-        );
-    }
-    
-    /**
-     * get single Ad by id
-     *
-     * @param  int $id
-     * @return Ad
-     */
-    public function getAdAction($id)
-    {
-        $ad = $this->getAdManager()->findAd($id);
-        if (!$ad) {
-            throw new NotFoundHttpException("Oglas ne obstaja.");
-        }
-        return $ad;
-    }
-    
 }

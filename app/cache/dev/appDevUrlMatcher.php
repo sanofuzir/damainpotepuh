@@ -324,6 +324,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // _zmenkarije
+        if ($pathinfo === '/zmenkarije') {
+            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\AdController::AdsAction',  '_route' => '_zmenkarije',);
+        }
+
+        if (0 === strpos($pathinfo, '/ad')) {
+            // _add_ad
+            if ($pathinfo === '/ad/add') {
+                return array (  'id' => NULL,  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\AdController::editAdAction',  '_route' => '_add_ad',);
+            }
+
+            // _edit_ad
+            if (0 === strpos($pathinfo, '/ad/edit') && preg_match('#^/ad/edit(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => '_edit_ad')), array (  'id' => NULL,  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\AdController::editAdAction',));
+            }
+
+        }
+
         // _home
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -338,11 +356,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::aboutAction',  '_route' => '_o_nas',);
         }
 
-        // _artikli
-        if ($pathinfo === '/artikli') {
-            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::productsAction',  '_route' => '_artikli',);
-        }
-
         // _galerija
         if ($pathinfo === '/galerija') {
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::galleryAction',  '_route' => '_galerija',);
@@ -353,22 +366,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::contactAction',  '_route' => '_kontakt',);
         }
 
-        // _zmenkarije
-        if ($pathinfo === '/zmenkarije') {
-            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::datingAction',  '_route' => '_zmenkarije',);
-        }
-
-        if (0 === strpos($pathinfo, '/ad')) {
-            // _add_ad
-            if ($pathinfo === '/ad/add') {
-                return array (  'id' => NULL,  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::editAdAction',  '_route' => '_add_ad',);
-            }
-
-            // _edit_ad
-            if (0 === strpos($pathinfo, '/ad/edit') && preg_match('#^/ad/edit(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => '_edit_ad')), array (  'id' => NULL,  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::editAdAction',));
-            }
-
+        // _artikli
+        if ($pathinfo === '/artikli') {
+            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::productsAction',  '_route' => '_artikli',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

@@ -8,28 +8,25 @@
 <table class="table table-condensed table-hover">
   <thead>
     <tr>
-      <th>Id</th>
       <th>Ime izdelka</th>
-      <th>cena</th>
-      <th>opis</th>
-      <th>datum vnosa</th>
+      <th>Cena</th>
+      <th>Opis</th>
+      <th>Datum vnosa</th>
       <th>Slika</th>
-      <th>&nbsp;</th>
+      <th>Kategorija</th>
+      <th>Podkategorija</th>
     </tr>
   </thead>
   <tbody>
     {% for product in products %}
     <tr>
-      <td>{{ product.id }}</td>
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>
       <td>{{ product.description|length > 50 ? product.description|slice(0, 50) ~ '...' : product.description }}</td>
       <td>{{ product.created|date('d.m.Y H:i:s') }}</td>
       <td><img src="{{ asset('products/')}}{{product.path }}" alt="slika" width="50"/></td>
-      <td><a href="{{ path('_admin_edit_product', {'id': product.id}) }}" title="Uredi Izdelek">
-              <i class="icon-edit"></i>Uredi</a>&nbsp;
-              <a href="{{ path('_admin_delete_product', {'id': product.id } ) }}" class="confirmation" title="Odstrani izdelek" data-confirmation="Ali si prepričan?">
-                  <i class="icon-trash">Izbriši</i></a></td>
+      <td>{{product.category}}</td>
+      <td>{{product.subcategory}}</td>
     </tr>
     {% endfor %}
   </tbody>
