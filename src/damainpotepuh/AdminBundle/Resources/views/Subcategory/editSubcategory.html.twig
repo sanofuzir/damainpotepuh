@@ -1,0 +1,14 @@
+{% extends 'damainpotepuhStaticBundle::layout.html.twig' %}
+
+{% block title %}Podkategorije{% endblock %}
+
+{% block content %}
+<h2>Podkategorije</h2>
+<form action="{{ subcategory.id ? path('_admin_edit_subcategory', {'id': subcategory.id}) : path('_admin_add_subcategory') }}" method="post" {{ form_enctype(form) }} novalidate>
+    {{ form_widget(form) }}
+    <!--div class="form-actions"-->
+        <input type="submit" name="save" value="Shrani" class="btn btn-primary">
+    <!--/div-->
+</form>
+
+{% endblock %}

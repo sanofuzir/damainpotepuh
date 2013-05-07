@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="damainpotepuh.entity.product.class">damainpotepuh\CoreBundle\Entity\Product</parameter>
+        <parameter key="damainpotepuh.product_manager.class">damainpotepuh\CoreBundle\Models\ProductManager</parameter>
+        <parameter key="damainpotepuh.entity.category.class">damainpotepuh\CoreBundle\Entity\Category</parameter>
+        <parameter key="damainpotepuh.category_manager.class">damainpotepuh\CoreBundle\Models\CategoryManager</parameter>
+        <parameter key="damainpotepuh.entity.subcategory.class">damainpotepuh\CoreBundle\Entity\Subcategory</parameter>
+        <parameter key="damainpotepuh.subcategory_manager.class">damainpotepuh\CoreBundle\Models\SubcategoryManager</parameter>        
+        <parameter key="damainpotepuh.entity.image.class">damainpotepuh\CoreBundle\Entity\Image</parameter>
+        <parameter key="damainpotepuh.image_manager.class">damainpotepuh\CoreBundle\Models\ImageManager</parameter>
+        <parameter key="damainpotepuh.entity.ad.class">damainpotepuh\CoreBundle\Entity\Ad</parameter>
+        <parameter key="damainpotepuh.ad_manager.class">damainpotepuh\CoreBundle\Models\AdManager</parameter>                                        
+    </parameters>
+
+    <services>
+        <service id="damainpotepuh.product_manager" class="%damainpotepuh.product_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%damainpotepuh.entity.product.class%</argument>
+        </service>
+        <service id="damainpotepuh.category_manager" class="%damainpotepuh.category_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%damainpotepuh.entity.category.class%</argument>
+        </service>
+        <service id="damainpotepuh.subcategory_manager" class="%damainpotepuh.subcategory_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%damainpotepuh.entity.subcategory.class%</argument>
+        </service>
+        <service id="damainpotepuh.image_manager" class="%damainpotepuh.image_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%damainpotepuh.entity.image.class%</argument>
+        </service>
+        <service id="damainpotepuh.ad_manager" class="%damainpotepuh.ad_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%damainpotepuh.entity.ad.class%</argument>
+        </service>
+    </services>
+
+</container>
