@@ -299,29 +299,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            if (0 === strpos($pathinfo, '/admin/subcategory')) {
-                // _admin_subcategorys
-                if ($pathinfo === '/admin/subcategorys') {
-                    return array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\SubcategoryController::subcategorysAction',  '_route' => '_admin_subcategorys',);
-                }
-
-                // _admin_delete_subcategory
-                if (0 === strpos($pathinfo, '/admin/subcategory/delete') && preg_match('#^/admin/subcategory/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_delete_subcategory')), array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\SubcategoryController::deleteSubcategoryAction',));
-                }
-
-                // _admin_add_subcategory
-                if ($pathinfo === '/admin/subcategory/add') {
-                    return array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\SubcategoryController::editSubcategoryAction',  '_route' => '_admin_add_subcategory',);
-                }
-
-                // _admin_edit_subcategory
-                if (0 === strpos($pathinfo, '/admin/subcategory/edit') && preg_match('#^/admin/subcategory/edit(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_edit_subcategory')), array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\SubcategoryController::editSubcategoryAction',));
-                }
-
-            }
-
         }
 
         // _zmenkarije

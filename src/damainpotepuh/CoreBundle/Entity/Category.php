@@ -35,7 +35,7 @@ class Category
     /**
     * @var Subcategory
     *
-    * @ORM\ManyToOne(targetEntity="subcategory", inversedBy="category")
+    * @ORM\Column(length=255)
     *
     */
     protected $subcategory;
@@ -54,7 +54,7 @@ class Category
      * Set name
      *
      * @param string $name
-     * @return Genre
+     * @return Category
      */
     public function setName($name)
     {
@@ -76,12 +76,12 @@ class Category
     /**
      * Set subcategory
      *
-     * @param Subcategory $subcategory
+     * @param string $subcategory
      * @return Category
      */
-    public function setSubcategory(Subcategory $subcategory = null)
+    public function setSubcategory($subcategory)
     {
-        $this->Subcategory = $subcategory;
+        $this->subcategory = $subcategory;
 
         return $this;
     }
@@ -104,5 +104,9 @@ class Category
     public function __toString()
     {
         return $this->getName();
+    }
+    public function getLabel()
+    {
+        return $this->name .' - '. $this->subcategory;
     }
 }

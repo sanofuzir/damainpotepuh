@@ -48,14 +48,10 @@ class __TwigTemplate_16aa5e5ae7c6b4366bd85340b37e0228 extends Twig_Template
         echo "\"><h4>Urejanje kategorij</h4></a><br />
 <a href=\"";
         // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_subcategorys"), "html", null, true);
-        echo "\"><h4>Urejanje podkategorij</h4></a><br />
-<a href=\"";
-        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_images"), "html", null, true);
         echo "\"><h4>Urejanje Galerije</h4></a><br />
 <a href=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_ads"), "html", null, true);
         echo "\"><h4>Urejanje Oglasev</h4></a>
 
@@ -74,6 +70,6 @@ class __TwigTemplate_16aa5e5ae7c6b4366bd85340b37e0228 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  59 => 13,  55 => 12,  51 => 11,  47 => 10,  43 => 9,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  55 => 12,  51 => 11,  47 => 10,  43 => 9,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

@@ -5,9 +5,12 @@ namespace damainpotepuh\AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use damainpotepuh\DemoBundle\Form\EventListener\AddNameFieldSubscriber;
+
 
 class ProductType extends AbstractType
 {
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -22,16 +25,16 @@ class ProductType extends AbstractType
             ->add('description', 'textarea', array(
                 'attr'  => array('class' => 'span7', 'rows' => 5, 'cols'=>50),
                 'label' => 'Opis'
+            )) 
+            ->add('category', 'entity', array('class'=>'damainpotepuhCoreBundle:Category',
+                'property'  => 'label',
+                'required'  => false,
+                'empty_value' => 'Izberi kategorijo'
             ))
-            ->add('category', 'entity', array('class' => 'damainpotepuhCoreBundle:Category',
-                'label' => 'Kategorija'
-             ))
-            ->add('subcategory', 'entity', array('class' => 'damainpotepuhCoreBundle:Subcategory',
-                'label' => 'Podkategorija'
-             ))
             ->add('file',null, array(
                 'label' => 'Slika'
             ));
+
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

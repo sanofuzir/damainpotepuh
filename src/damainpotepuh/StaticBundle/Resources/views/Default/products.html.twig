@@ -14,7 +14,6 @@
       <th>Datum vnosa</th>
       <th>Slika</th>
       <th>Kategorija</th>
-      <th>Podkategorija</th>
     </tr>
   </thead>
   <tbody>
@@ -25,8 +24,7 @@
       <td>{{ product.description|length > 50 ? product.description|slice(0, 50) ~ '...' : product.description }}</td>
       <td>{{ product.created|date('d.m.Y H:i:s') }}</td>
       <td><img src="{{ asset('products/')}}{{product.path }}" alt="slika" width="50"/></td>
-      <td>{{product.category}}</td>
-      <td>{{product.subcategory}}</td>
+      <td>{{ product.category }}</td>
     </tr>
     {% endfor %}
   </tbody>

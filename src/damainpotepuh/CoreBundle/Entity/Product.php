@@ -87,14 +87,6 @@ class Product
     */
     protected $category;
 
-    /**
-    * @var Subcategory
-    *
-    * @ORM\ManyToOne(targetEntity="Subcategory", inversedBy="product")
-    *
-    */
-    protected $subcategory;
-
     public function __construct() {
         $this->created = new \DateTime('now');
     }
@@ -210,29 +202,6 @@ class Product
     public function getCategory()
     {
         return $this->category;
-    }
-    
-    /**
-     * Set subcategory
-     *
-     * @param Subcategory $subcategory
-     * @return Product
-     */
-    public function setSubcategory(Subcategory $subcategory = null)
-    {
-        $this->subcategory = $subcategory;
-
-        return $this;
-    }
-
-    /**
-     * Get subcategory
-     *
-     * @return Subcategory
-     */
-    public function getSubcategory()
-    {
-        return $this->subcategory;
     }
     
     public function getAbsolutePath() {

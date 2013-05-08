@@ -15,6 +15,10 @@ class CategoryType extends AbstractType
                 'attr'  => array('class' => 'span7'),
                 'label' => 'Ime Kategorije'
             ))
+            ->add('subcategory',null, array(
+                'attr'  => array('class' => 'span7'),
+                'label' => 'Ime Podkategorije'
+            ))
         ;
     }
 

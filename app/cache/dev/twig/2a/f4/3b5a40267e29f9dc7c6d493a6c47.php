@@ -150,16 +150,18 @@ class __TwigTemplate_2af43b5a40267e29f9dc7c6d493a6c47 extends Twig_Template
         $this->displayBlock('content', $context, $blocks);
         // line 58
         echo "    </div>
+                  
+    </div>
       
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     ";
-        // line 63
+        // line 65
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
             // asset "02c86b5_0"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_02c86b5_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/scripts_jquery-1.9.1_1.js");
-            // line 67
+            // line 69
             echo "        <script src=\"";
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
@@ -185,7 +187,7 @@ class __TwigTemplate_2af43b5a40267e29f9dc7c6d493a6c47 extends Twig_Template
     ";
         }
         unset($context["asset_url"]);
-        // line 69
+        // line 71
         echo "
   </body>
 </html>
@@ -216,6 +218,6 @@ class __TwigTemplate_2af43b5a40267e29f9dc7c6d493a6c47 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  204 => 57,  201 => 56,  196 => 8,  189 => 69,  163 => 67,  159 => 63,  152 => 58,  150 => 56,  140 => 53,  129 => 51,  124 => 50,  120 => 49,  109 => 41,  105 => 40,  101 => 39,  97 => 38,  93 => 37,  86 => 33,  82 => 32,  41 => 17,  37 => 12,  30 => 8,  21 => 1,  72 => 19,  67 => 19,  62 => 15,  56 => 14,  51 => 12,  46 => 11,  40 => 9,  38 => 8,  35 => 7,  29 => 3,);
+        return array (  206 => 57,  203 => 56,  198 => 8,  191 => 71,  165 => 69,  161 => 65,  152 => 58,  150 => 56,  140 => 53,  129 => 51,  124 => 50,  120 => 49,  109 => 41,  105 => 40,  101 => 39,  97 => 38,  93 => 37,  86 => 33,  82 => 32,  67 => 19,  41 => 17,  37 => 12,  30 => 8,  21 => 1,);
     }
 }

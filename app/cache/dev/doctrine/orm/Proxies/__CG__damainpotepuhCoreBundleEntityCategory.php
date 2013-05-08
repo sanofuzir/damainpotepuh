@@ -63,7 +63,7 @@ class Category extends \damainpotepuh\CoreBundle\Entity\Category implements \Doc
         return parent::getName();
     }
 
-    public function setSubcategory(\damainpotepuh\CoreBundle\Entity\Subcategory $subcategory = NULL)
+    public function setSubcategory($subcategory)
     {
         $this->__load();
         return parent::setSubcategory($subcategory);
@@ -79,6 +79,12 @@ class Category extends \damainpotepuh\CoreBundle\Entity\Category implements \Doc
     {
         $this->__load();
         return parent::__toString();
+    }
+
+    public function getLabel()
+    {
+        $this->__load();
+        return parent::getLabel();
     }
 
 
