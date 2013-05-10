@@ -11,6 +11,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use damainpotepuh\CoreBundle\Entity\Category;
 use damainpotepuh\CoreBundle\Models\CategoryManager;
 use damainpotepuh\AdminBundle\Form\CategoryType;
+use damainpotepuh\CoreBundle\Entity\Subcategory;
+use damainpotepuh\CoreBundle\Models\SubcategoryManager;
+use damainpotepuh\AdminBundle\Form\SubcategoryType;
 
 class CategoryController extends Controller
 {
@@ -25,14 +28,24 @@ class CategoryController extends Controller
     }
 
     /**
+     * @return SubcategoryManager
+     */
+    private function getSubcategoryManager()
+    {
+        return $this->container->get('damainpotepuh.subcategory_manager');
+    }
+    
+    /**
      * @Route("/categorys", name="_admin_categorys")
      * @Template()
      */
     public function categorysAction()
     {
         $categorys = $this->getCategoryManager()->findAllCategorys();
+        $subcategorys = $this->getSubcategoryManager()->findAllSubcategorys();
 
-        return array( 'categorys' => $categorys);
+        return array( 'categorys'   =>  $categorys,
+                      'subcategorys' =>  $subcategorys);
     }
        
     /**
@@ -46,6 +59,17 @@ class CategoryController extends Controller
         return $this->redirect($this->generateUrl('_admin_categorys'));
     }
 
+    /**
+     * @Route("/subcategory/delete/{id}", name="_admin_delete_subcategory", requirements={"id" = "\d+"})
+     */
+    public function deleteSubcategoryAction($id)
+    {
+
+        $this->getSubcategoryManager()->deleteSubcategory($id);
+        $this->get('session')->getFlashBag()->add('success', 'Podkategorija je bila uspešno odstranjena!');
+        return $this->redirect($this->generateUrl('_admin_categorys'));
+    }
+    
     /**
      * @Route("/category/add", name="_admin_add_category")
      * @Route("/category/edit/{id}", name="_admin_edit_category", requirements={"id" = "\d+"})
@@ -77,6 +101,36 @@ class CategoryController extends Controller
     }
     
     /**
+     * @Route("/subcategory/add", name="_admin_add_subcategory")
+     * @Route("/subcategory/edit/{id}", name="_admin_edit_subcategory", requirements={"id" = "\d+"})
+     * @Template()
+     */
+    public function editSubcategoryAction(Request $request, $id = null)
+    {
+        if (is_null($id)) {
+            $entity = $this->getSubcategoryManager()->createSubcategory();
+        } else {
+            $entity = $this->getSubcategoryAction($id);
+        }
+
+        $form  = $this->createForm(new SubcategoryType(), $entity);
+
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+            if ($form->isValid()) {
+                $this->getSubcategoryManager()->saveSubcategory($entity);
+                $this->get('session')->getFlashBag()->add('success', 'Podkategorija je bila uspešno shranjena!');
+                return $this->redirect($this->generateUrl('_admin_categorys'));
+            }
+        }
+
+        return array(
+            'form'   => $form->createView(),
+            'subcategory' => $entity,
+        );
+    }
+    
+    /**
      * get single Category by id
      *
      * @param  int $id
@@ -91,5 +145,18 @@ class CategoryController extends Controller
         return $category;
     }
     
-    
+    /**
+     * get single Subcategory by id
+     *
+     * @param  int $id
+     * @return Subcategory
+     */
+    public function getSubcategoryAction($id)
+    {
+        $subcategory = $this->getSubcategoryManager()->findSubcategory($id);
+        if (!$subcategory) {
+            throw new NotFoundHttpException("Podkategorija ne obstaja.");
+        }
+        return $subcategory;
+    }
 }

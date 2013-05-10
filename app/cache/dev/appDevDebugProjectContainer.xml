@@ -512,8 +512,8 @@
     <parameter key="jms_di_extra.disable_grep">false</parameter>
     <parameter key="jms_di_extra.doctrine_integration">true</parameter>
     <parameter key="jms_di_extra.cache_warmer.controller_file_blacklist" type="collection"/>
-    <parameter key="jms_di_extra.doctrine_integration.entity_manager.file">/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_51892bc80c555.php</parameter>
-    <parameter key="jms_di_extra.doctrine_integration.entity_manager.class">EntityManager51892bc80c555_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager</parameter>
+    <parameter key="jms_di_extra.doctrine_integration.entity_manager.file">/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_518bc5608ac31.php</parameter>
+    <parameter key="jms_di_extra.doctrine_integration.entity_manager.class">EntityManager518bc5608ac31_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager</parameter>
     <parameter key="security.secured_services" type="collection"/>
     <parameter key="security.access.method_interceptor.class">JMS\SecurityExtraBundle\Security\Authorization\Interception\MethodSecurityInterceptor</parameter>
     <parameter key="security.access.method_access_control" type="collection"/>
@@ -558,6 +558,8 @@
     <parameter key="damainpotepuh.image_manager.class">damainpotepuh\CoreBundle\Models\ImageManager</parameter>
     <parameter key="damainpotepuh.entity.ad.class">damainpotepuh\CoreBundle\Entity\Ad</parameter>
     <parameter key="damainpotepuh.ad_manager.class">damainpotepuh\CoreBundle\Models\AdManager</parameter>
+    <parameter key="damainpotepuh.entity.subcategory.class">damainpotepuh\CoreBundle\Entity\Subcategory</parameter>
+    <parameter key="damainpotepuh.subcategory_manager.class">damainpotepuh\CoreBundle\Models\SubcategoryManager</parameter>
     <parameter key="fos_user.validator.password.class">FOS\UserBundle\Validator\PasswordValidator</parameter>
     <parameter key="fos_user.validator.unique.class">FOS\UserBundle\Validator\UniqueValidator</parameter>
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
@@ -1707,7 +1709,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>51892bc7dc056</argument>
+            <argument>518bc5607a825</argument>
           </service>
         </argument>
       </argument>
@@ -2005,7 +2007,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>51892bc7dc056</argument>
+            <argument>518bc5607a825</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -2972,8 +2974,8 @@
     <service id="doctrine.orm.default_manager_configurator" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator">
       <argument type="collection"/>
     </service>
-    <service id="doctrine.orm.default_entity_manager" class="EntityManager51892bc80c555_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
-      <file>/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_51892bc80c555.php</file>
+    <service id="doctrine.orm.default_entity_manager" class="EntityManager518bc5608ac31_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
+      <file>/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_518bc5608ac31.php</file>
       <argument type="service">
         <service class="Doctrine\ORM\EntityManager" factory-method="create" public="false">
           <argument type="service" id="doctrine.dbal.default_connection"/>
@@ -3236,6 +3238,10 @@
     <service id="damainpotepuh.ad_manager" class="damainpotepuh\CoreBundle\Models\AdManager">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument>damainpotepuh\CoreBundle\Entity\Ad</argument>
+    </service>
+    <service id="damainpotepuh.subcategory_manager" class="damainpotepuh\CoreBundle\Models\SubcategoryManager">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument>damainpotepuh\CoreBundle\Entity\Subcategory</argument>
     </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>

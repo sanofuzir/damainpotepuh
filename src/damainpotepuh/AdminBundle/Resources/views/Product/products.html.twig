@@ -12,7 +12,9 @@
       <th>Ime izdelka</th>
       <th>cena</th>
       <th>opis</th>
-      <th>datum vnosa</th>
+      <th>datum/ura vnosa</th>
+      <th>Kategorija</th>
+      <th>Podkategorija</th>
       <th>Slika</th>
       <th>&nbsp;</th>
     </tr>
@@ -25,6 +27,8 @@
       <td>{{ product.price }}</td>
       <td>{{ product.description|length > 50 ? product.description|slice(0, 50) ~ '...' : product.description }}</td>
       <td>{{ product.created|date('d.m.Y H:i:s') }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.subcategory }}</td>
       <td><img src="{{ asset('products/')}}{{product.path }}" alt="slika" width="50"/></td>
       <td><a href="{{ path('_admin_edit_product', {'id': product.id}) }}" title="Uredi Izdelek">
               <i class="icon-edit"></i>Uredi</a>&nbsp;

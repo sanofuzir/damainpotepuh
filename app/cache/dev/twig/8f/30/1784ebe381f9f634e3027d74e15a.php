@@ -85,47 +85,94 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
         // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/logo.png"), "html", null, true);
         echo "\" alt=\"Logo\" id=\"logo\"/>
-          </a>
+          </a>          
           <div class=\"nav-collapse collapse\">
-            <ul class=\"nav\">
-              <li><a href=\"";
+              <ul class=\"nav\">
+                <li><a href=\"";
         // line 37
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_home"), "html", null, true);
+        echo "\">Domov</a></li>
+                <li><a href=\"";
+        // line 38
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_o_nas"), "html", null, true);
         echo "\">O nas</a></li>
-              <li><a href=\"";
-        // line 38
+                 <li class=\"dropdown\">
+                  <a href=\"";
+        // line 40
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_artikli"), "html", null, true);
-        echo "\">Artikli</a></li>
-              <li><a href=\"";
-        // line 39
+        echo "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Artikli <b class=\"caret\"></b></a>
+                  <ul class=\"dropdown-menu\">
+                    <li><a href=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_dogs"), "html", null, true);
+        echo "\">Psi</a></li>
+                    <li><a href=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_cats"), "html", null, true);
+        echo "\">Mačke</a></li>
+                    <li><a href=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_birds"), "html", null, true);
+        echo "\">Ptice</a></li>
+                    <li><a href=\"";
+        // line 45
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_rodents"), "html", null, true);
+        echo "\">Glodalci</a></li>
+                    <li><a href=\"";
+        // line 46
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_fishes"), "html", null, true);
+        echo "\">Ribe</a></li>
+                    <li><a href=\"";
+        // line 47
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_hamsters"), "html", null, true);
+        echo "\">Hrčki</a></li>
+                    <li class=\"divider\"></li>
+                    <li class=\"nav-header\">Novosti</li>
+                    <li><a href=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_action_products"), "html", null, true);
+        echo "\">Akcijski izdelki</a></li>
+                    <li><a href=\"";
+        // line 51
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_new_products"), "html", null, true);
+        echo "\">Novi izdelki</a></li>
+                    <li><a href=\"";
+        // line 52
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_fancy"), "html", null, true);
+        echo "\">Šmensi-fensi</a></li>
+                  </ul>
+                </li>
+                <li><a href=\"";
+        // line 55
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_galerija"), "html", null, true);
         echo "\">Galerija</a></li>
-              <li><a href=\"";
-        // line 40
+                <li><a href=\"";
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_kontakt"), "html", null, true);
         echo "\">Kontakt</a></li>
-              <li><a href=\"";
-        // line 41
+                <li><a href=\"";
+        // line 57
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_zmenkarije"), "html", null, true);
         echo "\">Zmenkarije</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+              </ul>
+            </div><!--/.nav-collapse -->
+          
         </div>
       </div>
     </div>
 
     <div class=\"container\">
       ";
-        // line 49
+        // line 66
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session"), "flashbag"), "all", array(), "method"));
         foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-            // line 50
+            // line 67
             echo "          ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["messages"]) ? $context["messages"] : $this->getContext($context, "messages")));
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 51
+                // line 68
                 echo "              <div class=\"alert alert-";
                 echo twig_escape_filter($this->env, (isset($context["type"]) ? $context["type"] : $this->getContext($context, "type")), "html", null, true);
                 echo " fade in\" data-alert=\"alert\"><a class=\"close\" data-dismiss=\"alert\" href=\"#\">&times;</a><div class=\"alert-heading\">";
@@ -136,7 +183,7 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 53
+            // line 70
             echo "      ";
         }
         $_parent = $context['_parent'];
@@ -146,9 +193,9 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
                   
     <div class=\"symfony-content\">
         ";
-        // line 56
+        // line 73
         $this->displayBlock('content', $context, $blocks);
-        // line 58
+        // line 75
         echo "    </div>
     </div>
       
@@ -156,11 +203,11 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     ";
-        // line 64
+        // line 81
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
             // asset "02c86b5_0"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_02c86b5_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/scripts_jquery-1.9.1_1.js");
-            // line 68
+            // line 85
             echo "        <script src=\"";
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
@@ -186,7 +233,7 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
     ";
         }
         unset($context["asset_url"]);
-        // line 70
+        // line 87
         echo "
   </body>
 </html>
@@ -198,10 +245,10 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
     {
     }
 
-    // line 56
+    // line 73
     public function block_content($context, array $blocks = array())
     {
-        // line 57
+        // line 74
         echo "        ";
     }
 
@@ -217,6 +264,6 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  205 => 57,  202 => 56,  197 => 8,  190 => 70,  164 => 68,  160 => 64,  152 => 58,  150 => 56,  140 => 53,  129 => 51,  124 => 50,  120 => 49,  109 => 41,  105 => 40,  101 => 39,  97 => 38,  93 => 37,  86 => 33,  82 => 32,  67 => 19,  41 => 17,  37 => 12,  30 => 8,  21 => 1,);
+        return array (  252 => 74,  249 => 73,  244 => 8,  237 => 87,  211 => 85,  207 => 81,  199 => 75,  197 => 73,  187 => 70,  176 => 68,  171 => 67,  167 => 66,  155 => 57,  151 => 56,  147 => 55,  141 => 52,  137 => 51,  133 => 50,  127 => 47,  123 => 46,  119 => 45,  115 => 44,  111 => 43,  107 => 42,  102 => 40,  97 => 38,  93 => 37,  86 => 33,  82 => 32,  67 => 19,  41 => 17,  37 => 12,  30 => 8,  21 => 1,);
     }
 }

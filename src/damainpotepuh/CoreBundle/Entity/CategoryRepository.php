@@ -12,10 +12,32 @@ use Doctrine\ORM\EntityRepository;
  */
 class CategoryRepository extends EntityRepository
 {
+    
     public function findAll() 
     {
         return $this->getEntityManager()
                     ->createQuery('SELECT c FROM damainpotepuhCoreBundle:category c ORDER BY c.name DESC')
+                    ->getResult();
+    }
+    public function findCategoryByName($name)
+    {
+        return $this->getEntityManager()
+                    ->createQuery('
+                        SELECT c FROM damainpotepuhCoreBundle:category c
+                        WHERE c.name = :name'
+                    )
+                    ->setParameter('name', $name)
+                    ->getResult();
+    }
+    
+    public function findCategoryById($id)
+    {
+        return $this->getEntityManager()
+                    ->createQuery('
+                        SELECT c FROM damainpotepuhCoreBundle:category c
+                        WHERE c.id = :id'
+                    )
+                    ->setParameter('id', $id)
                     ->getResult();
     }
 }

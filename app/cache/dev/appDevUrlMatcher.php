@@ -232,6 +232,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_delete_category')), array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\CategoryController::deleteCategoryAction',));
                 }
 
+            }
+
+            // _admin_delete_subcategory
+            if (0 === strpos($pathinfo, '/admin/subcategory/delete') && preg_match('#^/admin/subcategory/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_delete_subcategory')), array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\CategoryController::deleteSubcategoryAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/admin/category')) {
                 // _admin_add_category
                 if ($pathinfo === '/admin/category/add') {
                     return array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\CategoryController::editCategoryAction',  '_route' => '_admin_add_category',);
@@ -240,6 +248,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 // _admin_edit_category
                 if (0 === strpos($pathinfo, '/admin/category/edit') && preg_match('#^/admin/category/edit(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_edit_category')), array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\CategoryController::editCategoryAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin/subcategory')) {
+                // _admin_add_subcategory
+                if ($pathinfo === '/admin/subcategory/add') {
+                    return array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\CategoryController::editSubcategoryAction',  '_route' => '_admin_add_subcategory',);
+                }
+
+                // _admin_edit_subcategory
+                if (0 === strpos($pathinfo, '/admin/subcategory/edit') && preg_match('#^/admin/subcategory/edit(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_edit_subcategory')), array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\CategoryController::editSubcategoryAction',));
                 }
 
             }
@@ -319,15 +340,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // _home
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', '_home');
-            }
-
-            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::indexAction',  '_route' => '_home',);
-        }
-
         // _o_nas
         if ($pathinfo === '/o_nas') {
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::aboutAction',  '_route' => '_o_nas',);
@@ -343,9 +355,71 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::contactAction',  '_route' => '_kontakt',);
         }
 
-        // _artikli
-        if ($pathinfo === '/artikli') {
-            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::productsAction',  '_route' => '_artikli',);
+        // _home
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', '_home');
+            }
+
+            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::indexAction',  '_route' => '_home',);
+        }
+
+        if (0 === strpos($pathinfo, '/artikli')) {
+            // _artikli
+            if ($pathinfo === '/artikli') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::productsAction',  '_route' => '_artikli',);
+            }
+
+            // _dogs
+            if ($pathinfo === '/artikli/psi') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::dogsAction',  '_route' => '_dogs',);
+            }
+
+            // _cats
+            if ($pathinfo === '/artikli/mačke') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::catsAction',  '_route' => '_cats',);
+            }
+
+            // _birds
+            if ($pathinfo === '/artikli/ptiči') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::birdsAction',  '_route' => '_birds',);
+            }
+
+            // _rodents
+            if ($pathinfo === '/artikli/glodalci') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::rodentsAction',  '_route' => '_rodents',);
+            }
+
+            // _fishes
+            if ($pathinfo === '/artikli/ribe') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::fishesAction',  '_route' => '_fishes',);
+            }
+
+            // _hamsters
+            if ($pathinfo === '/artikli/hrčki') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::hamstersAction',  '_route' => '_hamsters',);
+            }
+
+            // _action_products
+            if ($pathinfo === '/artikli/akcijski_izdelki') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::action_productsAction',  '_route' => '_action_products',);
+            }
+
+            // _new_products
+            if ($pathinfo === '/artikli/novi_izdelki') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::new_productsAction',  '_route' => '_new_products',);
+            }
+
+            // _fancy
+            if ($pathinfo === '/artikli/smensi-fensi') {
+                return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::fancyAction',  '_route' => '_fancy',);
+            }
+
+            // _product_subcategory
+            if (preg_match('#^/artikli/(?P<categoryName>[^/]++)/(?P<subcategoryName>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => '_product_subcategory')), array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::subcategoryAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

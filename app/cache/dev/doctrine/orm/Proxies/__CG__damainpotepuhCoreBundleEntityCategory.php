@@ -63,34 +63,16 @@ class Category extends \damainpotepuh\CoreBundle\Entity\Category implements \Doc
         return parent::getName();
     }
 
-    public function setSubcategory($subcategory)
-    {
-        $this->__load();
-        return parent::setSubcategory($subcategory);
-    }
-
-    public function getSubcategory()
-    {
-        $this->__load();
-        return parent::getSubcategory();
-    }
-
     public function __toString()
     {
         $this->__load();
         return parent::__toString();
     }
 
-    public function getLabel()
-    {
-        $this->__load();
-        return parent::getLabel();
-    }
-
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'name', 'subcategory');
+        return array('__isInitialized__', 'id', 'name');
     }
 
     public function __clone()

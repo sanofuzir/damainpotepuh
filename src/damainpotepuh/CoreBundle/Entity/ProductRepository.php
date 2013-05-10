@@ -18,4 +18,42 @@ class ProductRepository extends EntityRepository
                     ->createQuery('SELECT p FROM damainpotepuhCoreBundle:product p ORDER BY p.created DESC')
                     ->getResult();
     }
+    
+    public function findAllProductsByCategoryName($category)
+    {
+        return $this->getEntityManager()
+                    ->createQuery('
+                        SELECT p FROM damainpotepuhCoreBundle:product p
+                        WHERE p.category = :category'
+                    )
+                    ->setParameter('category', $category)
+                    ->getResult();
+    }
+    
+    public function findAllSubcategorysByCategory($category)
+    {
+        return $this->getEntityManager()
+                    ->createQuery('
+                        SELECT p FROM damainpotepuhCoreBundle:product p
+                        WHERE p.category = :category 
+                        GROUP BY p.subcategory
+                    ')
+                    ->setParameter('category', $category)
+                    ->getResult();
+    }
+    
+    public function findAllProductsByCategoryAndSubcategoryName($category, $subcategory)
+    {
+        return $this->getEntityManager()
+                    ->createQuery('
+                        SELECT p FROM damainpotepuhCoreBundle:product p
+                        WHERE p.category = :category 
+                        AND p.subcategory = :subcategory
+                    ')
+                    ->setParameters(array(
+                                        'category' => $category, 
+                                        'subcategory' => $subcategory
+                                    ))
+                    ->getResult();        
+    }
 }

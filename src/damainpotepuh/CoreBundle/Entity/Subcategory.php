@@ -23,15 +23,15 @@ class Subcategory
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
     * @var string
     *
     * @ORM\Column(length=255)
     */
-    private $name;
-    
+    protected $name;  
+
     /**
      * Get id
      *
@@ -46,7 +46,7 @@ class Subcategory
      * Set name
      *
      * @param string $name
-     * @return Genre
+     * @return Group
      */
     public function setName($name)
     {
@@ -64,7 +64,6 @@ class Subcategory
     {
         return $this->name;
     }
-    
 
     /**
      * Get genre as string

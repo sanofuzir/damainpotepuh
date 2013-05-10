@@ -68,5 +68,37 @@ class ProductManager {
         $entity = new $class();
         return $entity;
     }
-
+    
+    /**
+     * Get products by category
+     *
+     * @param int $category
+     * @return Products
+     */
+    public function findAllProductsByCategoryName($category)
+    {
+        return $this->repository->findAllProductsByCategoryName($category);
+    }
+    
+    /**
+     * Get subcategorys by category
+     *
+     * @param int $category
+     * @return Product
+     */
+    public function findAllSubcategorysByCategory($category)
+    {        
+    	return $this->repository->findAllSubcategorysByCategory($category);
+    }
+    
+    /**
+     * Get products by subcategorys and category
+     *
+     * @param $category, $subcategory 
+     * @return Products
+     */
+    public function findAllProductsByCategoryAndSubcategoryName($category, $subcategory)
+    {        
+    	return $this->repository->findAllProductsByCategoryAndSubcategoryName($category, $subcategory);
+    }
 }

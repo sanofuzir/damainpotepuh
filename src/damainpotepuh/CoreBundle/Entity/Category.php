@@ -23,23 +23,15 @@ class Category
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
     * @var string
     *
     * @ORM\Column(length=255)
     */
-    private $name;
+    protected $name;
     
-    /**
-    * @var Subcategory
-    *
-    * @ORM\Column(length=255)
-    *
-    */
-    protected $subcategory;
-
     /**
      * Get id
      *
@@ -72,29 +64,6 @@ class Category
     {
         return $this->name;
     }
-    
-    /**
-     * Set subcategory
-     *
-     * @param string $subcategory
-     * @return Category
-     */
-    public function setSubcategory($subcategory)
-    {
-        $this->subcategory = $subcategory;
-
-        return $this;
-    }
-
-    /**
-     * Get subcategory
-     *
-     * @return Subcategory
-     */
-    public function getSubcategory()
-    {
-        return $this->subcategory;
-    }
 
     /**
      * Get genre as string
@@ -104,9 +73,5 @@ class Category
     public function __toString()
     {
         return $this->getName();
-    }
-    public function getLabel()
-    {
-        return $this->name .' - '. $this->subcategory;
     }
 }

@@ -25,11 +25,18 @@ class ProductType extends AbstractType
             ->add('description', 'textarea', array(
                 'attr'  => array('class' => 'span7', 'rows' => 5, 'cols'=>50),
                 'label' => 'Opis'
-            )) 
+            ))                
             ->add('category', 'entity', array('class'=>'damainpotepuhCoreBundle:Category',
-                'property'  => 'label',
+                'property'  => 'name',
                 'required'  => false,
-                'empty_value' => 'Izberi kategorijo'
+                'empty_value' => 'Izberi kategorijo',
+                'label' => 'Kategorija'
+            ))
+            ->add('subcategory', 'entity', array('class'=>'damainpotepuhCoreBundle:Subcategory',
+                'property'  => 'name',
+                'required'  => false,
+                'empty_value' => 'Izberi podkategorijo',
+                'label' => 'Podkategorija'
             ))
             ->add('file',null, array(
                 'label' => 'Slika'

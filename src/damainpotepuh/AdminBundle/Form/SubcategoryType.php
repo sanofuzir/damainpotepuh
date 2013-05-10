@@ -13,8 +13,8 @@ class SubcategoryType extends AbstractType
         $builder
             ->add('name',null, array(
                 'attr'  => array('class' => 'span7'),
-                'label' => 'Ime podkategorije'
-            ))
+                'label' => 'Ime Podkategorije'
+            ))            
         ;
     }
 

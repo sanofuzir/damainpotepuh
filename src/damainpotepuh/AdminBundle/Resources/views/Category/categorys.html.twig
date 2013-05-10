@@ -5,12 +5,12 @@
 {% block content %}
 <h2>Kategorije</h2>
 <a class="btn btn-small pull-right" href="{{ path('_admin_add_category') }}"><i class="icon-plus"></i> Dodaj kategorijo</a>
+<a class="btn btn-small pull-right" href="{{ path('_admin_add_subcategory') }}"><i class="icon-plus"></i> Dodaj podkategorijo</a>
 <table class="table table-condensed table-hover">
   <thead>
     <tr>
       <th>Id</th>
-      <th>Ime</th>
-      <th>Podaktegorija</th>
+      <th>Ime kategorije</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -19,7 +19,6 @@
     <tr>
       <td>{{ category.id }}</td>
       <td>{{ category.name }}</td>
-      <td>{{ category.subcategory }}</td>
       <td><a href="{{ path('_admin_edit_category', {'id': category.id}) }}" title="Uredi Kategorijo">
               <i class="icon-edit"></i>Uredi</a>&nbsp;
               <a href="{{ path('_admin_delete_category', {'id': category.id } ) }}" class="confirmation" title="Odstrani kategorijo" data-confirmation="Ali si prepričan?">
@@ -28,5 +27,26 @@
     {% endfor %}
   </tbody>
 </table>
-
+<h2>Podkategorije</h2>
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Ime podkategorije</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for subcategory in subcategorys %}
+    <tr>
+      <td>{{ subcategory.id }}</td>
+      <td>{{ subcategory.name }}</td>
+      <td><a href="{{ path('_admin_edit_subcategory', {'id': subcategory.id}) }}" title="Uredi Podkategorijo">
+              <i class="icon-edit"></i>Uredi</a>&nbsp;
+              <a href="{{ path('_admin_delete_subcategory', {'id': subcategory.id } ) }}" class="confirmation" title="Odstrani podkategorijo" data-confirmation="Ali si prepričan?">
+                  <i class="icon-trash">Izbriši</i></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

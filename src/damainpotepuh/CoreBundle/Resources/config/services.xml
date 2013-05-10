@@ -14,6 +14,8 @@
         <parameter key="damainpotepuh.image_manager.class">damainpotepuh\CoreBundle\Models\ImageManager</parameter>
         <parameter key="damainpotepuh.entity.ad.class">damainpotepuh\CoreBundle\Entity\Ad</parameter>
         <parameter key="damainpotepuh.ad_manager.class">damainpotepuh\CoreBundle\Models\AdManager</parameter>                                        
+        <parameter key="damainpotepuh.entity.subcategory.class">damainpotepuh\CoreBundle\Entity\Subcategory</parameter>
+        <parameter key="damainpotepuh.subcategory_manager.class">damainpotepuh\CoreBundle\Models\SubcategoryManager</parameter>                                        
     </parameters>
 
     <services>
@@ -32,6 +34,10 @@
         <service id="damainpotepuh.ad_manager" class="%damainpotepuh.ad_manager.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument>%damainpotepuh.entity.ad.class%</argument>
+        </service>
+        <service id="damainpotepuh.Subcategory_manager" class="%damainpotepuh.Subcategory_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%damainpotepuh.entity.Subcategory.class%</argument>
         </service>
     </services>
 

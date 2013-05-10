@@ -3,7 +3,7 @@
 namespace damainpotepuh\CoreBundle\Models;
 
 use Doctrine\ORM\EntityManager;
-use damainpotepuh\CoreBundle\Entity\Subcategory;
+use damainpotepuh\CoreBundle\Entity\Group;
 
 class SubcategoryManager {
 
@@ -57,6 +57,7 @@ class SubcategoryManager {
         	$this->em->flush();
     	}
     }
+    
     /**
      * create new Subcategory
      *
@@ -68,5 +69,15 @@ class SubcategoryManager {
         $entity = new $class();
         return $entity;
     }
-
+    
+    /**
+     * Get subcategorys by name
+     *
+     * @param int $name
+     * @return subcategory
+     */
+    public function findSubcategoryByName($name)
+    {
+    	return $this->repository->findSubcategoryByName($name);
+    }
 }

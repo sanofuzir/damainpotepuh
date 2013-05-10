@@ -37,6 +37,10 @@ class __TwigTemplate_185575010730380919365519363e674b extends Twig_Template
         // line 6
         echo "
 <h2>Artikli</h2>
+<div class=\"menu\">
+    ";
+        // line 10
+        echo "</div>
 <table class=\"table table-condensed table-hover\">
   <thead>
     <tr>
@@ -46,40 +50,45 @@ class __TwigTemplate_185575010730380919365519363e674b extends Twig_Template
       <th>Datum vnosa</th>
       <th>Slika</th>
       <th>Kategorija</th>
+      <th>Podkategorija</th>
     </tr>
   </thead>
   <tbody>
     ";
-        // line 20
+        // line 24
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["products"]) ? $context["products"] : $this->getContext($context, "products")));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 21
+            // line 25
             echo "    <tr>
       <td>";
-            // line 22
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"), "html", null, true);
             echo "</td>
       <td>";
-            // line 23
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "price"), "html", null, true);
             echo "</td>
       <td>";
-            // line 24
+            // line 28
             echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "description")) > 50)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "description"), 0, 50) . "...")) : ($this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "description"))), "html", null, true);
             echo "</td>
       <td>";
-            // line 25
+            // line 29
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "created"), "d.m.Y H:i:s"), "html", null, true);
             echo "</td>
       <td><img src=\"";
-            // line 26
+            // line 30
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("products/"), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "path"), "html", null, true);
             echo "\" alt=\"slika\" width=\"50\"/></td>
       <td>";
-            // line 27
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "category"), "html", null, true);
+            echo "</td>
+      <td>";
+            // line 32
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "subcategory"), "html", null, true);
             echo "</td>
     </tr>
     ";
@@ -87,7 +96,7 @@ class __TwigTemplate_185575010730380919365519363e674b extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 30
+        // line 35
         echo "  </tbody>
 </table>
 
@@ -106,6 +115,6 @@ class __TwigTemplate_185575010730380919365519363e674b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 30,  82 => 27,  77 => 26,  73 => 25,  69 => 24,  65 => 23,  61 => 22,  58 => 21,  54 => 20,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  100 => 35,  91 => 32,  87 => 31,  82 => 30,  78 => 29,  74 => 28,  70 => 27,  66 => 26,  63 => 25,  59 => 24,  43 => 10,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

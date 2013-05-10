@@ -57,6 +57,7 @@ class CategoryManager {
         	$this->em->flush();
     	}
     }
+    
     /**
      * create new Category
      *
@@ -68,5 +69,26 @@ class CategoryManager {
         $entity = new $class();
         return $entity;
     }
-
+    
+    /**
+     * Get categorys by name
+     *
+     * @param int $name
+     * @return Category
+     */
+    public function findCategoryByName($name)
+    {
+    	return $this->repository->findCategoryByName($name);
+    }
+    
+    /**
+     * Get categorys by id
+     *
+     * @param int $id
+     * @return Category
+     */
+    public function findCategoryById($id)
+    {
+    	return $this->repository->findCategoryById($id);
+    }
 }
