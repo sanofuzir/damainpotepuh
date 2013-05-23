@@ -35,11 +35,31 @@ class Ad
     private $name;
     
     /**
+    * @var string
+    *
+    * @ORM\Column(length=255)
+    */
+    private $telephone;
+    
+    /**
      * @var UploadedFile
      *
      * @Assert\File(maxSize="10000000")
      */
     protected $file;
+    
+    /**
+     * @var string
+     * @ORM\Column(length=255)
+     * @Assert\Email(
+     *     message = "Email ni veljaven!",
+     *     checkMX = true
+     * )
+     * @Assert\NotNull(
+     *     message = "To polje ne sme biti prazno!"
+     * )
+     */
+     protected $email;
 
     /**
      * @var string
@@ -66,7 +86,10 @@ class Ad
     /**
     * @var string
     *
-    * @ORM\Column(type="text", nullable=true)
+    * @ORM\Column(type="text")
+    * @Assert\NotNull(
+    *     message = "To polje ne sme biti prazno!"
+    * )
     */
     protected $text;
     
@@ -96,7 +119,7 @@ class Ad
 
         return $this;
     }
-
+    
     /**
      * Get name
      *
@@ -105,6 +128,52 @@ class Ad
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+    
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     * @return Ad
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+    
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Ad
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
     }
     
     public function getAbsolutePath() {

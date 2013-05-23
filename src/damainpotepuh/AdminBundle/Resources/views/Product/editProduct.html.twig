@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Izdelki</h2>
-<form action="{{ product.id ? path('_admin_edit_product', {'id': product.id}) : path('_admin_add_product') }}" method="post" {{ form_enctype(form) }} novalidate>
+<form class="ad_form" action="{{ product.id ? path('_admin_edit_product', {'id': product.id}) : path('_admin_add_product') }}" method="post" {{ form_enctype(form) }} novalidate>
     {{ form_widget(form) }}
     <!--div class="form-actions"-->
         <input type="submit" name="save" value="Shrani" class="btn btn-primary">

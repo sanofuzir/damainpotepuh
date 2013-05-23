@@ -4,10 +4,10 @@
 
 {% block content %}
 <h2>Oglasi</h2>
-<form action="{{ ad.id ? path('_edit_ad', {'id': ad.id}) : path('_add_ad') }}" method="post" {{ form_enctype(form) }} novalidate>
+<form class="ad_form" action="{{ ad.id ? path('_edit_ad', {'id': ad.id}) : path('_add_ad') }}" method="post" {{ form_enctype(form) }} novalidate>
     {{ form_widget(form) }}
     <!--div class="form-actions"-->
-        <input type="submit" name="save" value="Shrani" class="btn btn-primary">
+        <input type="submit" name="save" value="Shrani" class="ad_form_save btn btn-primary">
     <!--/div-->
 </form>
 

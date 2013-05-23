@@ -1,0 +1,43 @@
+body {
+  padding-top: 220px;  
+}
+#logo {
+    width: 200px;
+}
+.galery{
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;
+}
+.galery td {
+    width: 200px;
+    background-color: #F9D49E;
+}
+.galery tr {
+    margin-top: 50px;
+    border-bottom: 20px solid white;
+}
+.galery img {
+    margin: 20px 0px;
+    padding-left: 20px;
+}
+.description {
+    margin: 40px;
+    font-size: 1.3em;
+}
+#contact td {
+    padding: 0px 50px 30px 0px;
+    vertical-align:text-top;
+    padding-top: 20px;
+}
+.ads td {
+    width: 200px;
+    text-align: center;
+}
+.ads img {
+    padding: 20px;
+}
+.ads tr {
+    border: 1px solid #000000;
+    background-color: #F9D49E;
+}

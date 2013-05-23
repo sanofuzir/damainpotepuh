@@ -1,0 +1,31 @@
+{% extends 'damainpotepuhStaticBundle::layout.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="header-img">
+    <img src="{{ asset('bundles/damainpotepuhstatic/images/Slides/cat-header.jpg') }}" alt="images"/>
+</div>
+
+<div class="menu">
+    <h2>{{ product.category }}</h2>
+    {{ render(controller('damainpotepuhStaticBundle:Product:Menu', { 'id': category.id })) }}
+</div>
+
+<div class="products">
+    <div class="singleProduct product">
+        <h2>{{ product.name }}</h2>
+        <p><b>Opis:</b><br />
+           {{ product.description|length > 50 ? 
+              product.description|slice(0, 50) ~ '...' : 
+              product.description }}
+        </p>
+        <p>Dodan {{ product.created|date('d.m.Y') }}<p>
+        <p><span class="price">{{ product.price }} €</span></p>
+        <a href="{{ asset('products/')}}{{product.path }}" rel="lightbox">
+            <img src="{{ asset('products/')}}{{product.path }}" alt="slika"/>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -4,24 +4,24 @@
 
 {% block content %}
 
-<h2>Zmenkarije</h2>
-<table class="ads">
-    <a class="btn btn-small pull-right" href="{{ path('_add_ad') }}"><i class="icon-plus"></i> Dodaj oglas</a>
+<h1>Zmenkarije, oglasi</h1>
+
+<a class="addbutton" href="{{ path('_add_ad') }}">Dodaj oglas</a>
+
     {% for ad in ads %}
-    <tr>
-        <th><h3>Oglas</h3></th>
-        <th><h3>Ime</h3></th>
-        <th><h3>Opis</h3></th>
-    </tr>
-    <tr>
-      <td><img src="{{ asset('ads/')}}{{ad.path }}" alt="slika" /></td>
-      <td>{{ad.name}}</td>
-      <td><span class="description">
-          {{ ad.text|length > 50 ? ad.text|slice(0, 50) ~ '...' : ad.text }}
-          </span>
-      </td>
-    </tr>
+        <div class="ad">
+            <div class="ad-text">
+                <h4>Ime: </h4>{{ad.name}}
+                <h4>Telefon: </h4>{{ad.telephone}}
+                <h4>Email: </h4>{{ad.email}}
+                <span class="description">
+                    <h4>Oglas: </h4>{{ ad.text|length > 50 ? ad.text|slice(0, 50) ~ '...' : ad.text }}
+                </span>
+            </div>
+            <a href="{{ asset('ads/')}}{{ad.path }}" rel="lightbox" alt="slika">
+                <img src="{{ asset('ads/')}}{{ad.path }}" alt="slika" />
+            </a>
+        </div>
     {% endfor %}
-</table>
 
 {% endblock %}

@@ -3,32 +3,27 @@
 {% block title %}{{ products.0.category }}{% endblock %}
 
 {% block content %}
+<div class="header-img">
+    <img src="{{ asset('bundles/damainpotepuhstatic/images/Slides/cat-header.jpg') }}" alt="images"/>
+</div>
 
-<h2>{{ products.0.category }}</h2>
 <div class="menu">
+    <h2>{{ products.0.category }}</h2>
     {{ render(controller('damainpotepuhStaticBundle:Product:Menu', { 'id': products.0.category })) }}
 </div>
-<table class="table table-condensed table-hover">
-  <thead>
-    <tr>
-      <th>Ime izdelka</th>
-      <th>Cena</th>
-      <th>Opis</th>
-      <th>Datum vnosa</th>
-      <th>Slika</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for product in products %}
-    <tr>
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.description|length > 50 ? product.description|slice(0, 50) ~ '...' : product.description }}</td>
-      <td>{{ product.created|date('d.m.Y H:i:s') }}</td>
-      <td><img src="{{ asset('products/')}}{{product.path }}" alt="slika" width="50"/></td>
-    </tr>
+
+<div class="products">
+{% for product in products %}
+    <div class="product">
+        <h2>{{ product.name }}</h2>
+        <p class="product_link">
+            <a href="{{ path('_single_product', ({'id': product.id}) ) }}" >Več...&raquo;</a>
+        </p>
+        <p class="price-info" style="margin-left: 0px;"><span style="padding-right: 20px;">{{ product.price }} €</span></p>
+        <img src="{{ asset('products/')}}{{product.path }}" alt="slika"/>
+        
+    </div>
     {% endfor %}
-  </tbody>
-</table>
+</div>
 
 {% endblock %}

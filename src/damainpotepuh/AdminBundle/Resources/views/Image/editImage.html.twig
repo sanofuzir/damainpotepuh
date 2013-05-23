@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Slike</h2>
-<form action="{{ image.id ? path('_admin_edit_image', {'id': image.id}) : path('_admin_add_image') }}" method="post" {{ form_enctype(form) }} novalidate>
+<form class="ad_form" action="{{ image.id ? path('_admin_edit_image', {'id': image.id}) : path('_admin_add_image') }}" method="post" {{ form_enctype(form) }} novalidate>
     {{ form_widget(form) }}
     <!--div class="form-actions"-->
         <input type="submit" name="save" value="Shrani" class="btn btn-primary">

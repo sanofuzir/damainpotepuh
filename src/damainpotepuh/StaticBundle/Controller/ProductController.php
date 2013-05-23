@@ -157,24 +157,6 @@ class ProductController extends Controller
     }
     
     /**
-     * @Route("/artikli/hrčki", name="_hamsters")
-     * @Template()
-     */
-    public function hamstersAction()
-    {
-        $name = "Hrčki";
-        $category = $this->getCategoryManager()->findCategoryByName($name);
-        $products = $this->getProductManager()->findAllProductsByCategoryName($category);
-        if (!$products) {
-            throw new NotFoundHttpException("Za to kategorijo ni izdelkov!");
-        }
-
-        return $this->render('damainpotepuhStaticBundle:Product:products.html.twig',
-                                array('products' => $products)
-                            );
-    }
-    
-    /**
      * @Route("/artikli/akcijski_izdelki", name="_action_products")
      * @Template()
      */
@@ -247,6 +229,27 @@ class ProductController extends Controller
         $subcategory = $this->getSubcategoryManager()->findSubcategoryByName($subcategoryName);
         $products = $this->getProductManager()->findAllProductsByCategoryAndSubcategoryName($category, $subcategory);
 
-        return array( 'products' => $products );
+        return $this->render('damainpotepuhStaticBundle:Product:products.html.twig',
+                                array('products' => $products)
+                            );
+    
+    }
+    
+    /**
+     * @Route("/artikli/{id}", name="_single_product")
+     * @Template()
+     */
+    public function singleProductAction ($id)
+    {
+        $product = $this->getProductManager()->findProduct($id);
+        $category = $this->getCategoryManager()->findCategory($product->getCategory());
+        
+        if (!$id) {
+            throw new NotFoundHttpException('Ta Izdelek ne obstaja!');
+        }
+        
+        return array('product'  =>  $product,
+                     'category' =>  $category
+                    );
     }
 }

@@ -218,7 +218,7 @@ class Product
      * @param subcategory $subcategory
      * @return Product
      */
-    public function setsubcategory(subcategory $subcategory = null)
+    public function setSubcategory(subcategory $subcategory = null)
     {
         $this->subcategory = $subcategory;
 
@@ -228,9 +228,9 @@ class Product
     /**
      * Get subcategory
      *
-     * @return subcategory
+     * @return Subcategory
      */
-    public function getsubcategory()
+    public function getSubcategory()
     {
         return $this->subcategory;
     }

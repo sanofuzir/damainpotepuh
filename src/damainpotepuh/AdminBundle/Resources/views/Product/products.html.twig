@@ -5,7 +5,7 @@
 {% block content %}
 <h2>Izdelki</h2>
 <a class="btn btn-small pull-right" href="{{ path('_admin_add_product') }}"><i class="icon-plus"></i> Dodaj Izdelek</a>
-<table class="table table-condensed table-hover">
+<table style="background-color: #F9D49E;" class="table table-condensed table-hover">
   <thead>
     <tr>
       <th>Id</th>
@@ -24,7 +24,7 @@
     <tr>
       <td>{{ product.id }}</td>
       <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
+      <td>{{ product.price }}€</td>
       <td>{{ product.description|length > 50 ? product.description|slice(0, 50) ~ '...' : product.description }}</td>
       <td>{{ product.created|date('d.m.Y H:i:s') }}</td>
       <td>{{ product.category }}</td>

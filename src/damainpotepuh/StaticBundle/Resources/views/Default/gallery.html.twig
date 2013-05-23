@@ -3,18 +3,22 @@
 {% block title %}Galerija{% endblock %}
 
 {% block content %}
-<h2>Galerija</h2>
 
-<table class="galery">
+<h1>Galerija</h1>
+
+<div class="gallery-container">
+
     {% for image in images %}
-    <tr>
-      <td><img src="{{ asset('galery/')}}{{image.path }}" alt="slika" /></td>
-      <td><span class="description">
-          {{ image.description|length > 50 ? image.description|slice(0, 50) ~ '...' : image.description }}
-          </span>
-      </td>
-    </tr>
+            <div class="img-container">
+                <a href="{{ asset('galery/')}}{{image.path }}" rel="lightbox[gallery]">
+                    <img src="{{ asset('galery/')}}{{image.path }}" alt="image" />
+                    <div class="img-info">
+                        <h4>{{ image.description|length > 50 ? image.description|slice(0, 50) ~ '...' : image.description }}</h4>
+                    </div>
+                </a>
+            </div>
     {% endfor %}
-</table>
+
+</div>
 
 {% endblock %}

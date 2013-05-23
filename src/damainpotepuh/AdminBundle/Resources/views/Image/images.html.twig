@@ -5,7 +5,7 @@
 {% block content %}
 <h2>Slike</h2>
 <a class="btn btn-small pull-right" href="{{ path('_admin_add_image') }}"><i class="icon-plus"></i> Dodaj Sliko</a>
-<table class="table table-condensed table-hover">
+<table style="background-color: #F9D49E;" class="table table-condensed table-hover">
   <thead>
     <tr>
       <th>Id</th>
@@ -18,10 +18,14 @@
   <tbody>
     {% for image in images %}
     <tr>
-      <td><a href="{{ path('_admin_images', {'id': image.id}) }}">{{ image.id }}</a></td>
+      <td>{{ image.id }}</td>
       <td>{{ image.description|length > 50 ? image.description|slice(0, 50) ~ '...' : image.description }}</td>
       <td>{{ image.created|date('d.m.Y H:i:s') }}</td>
-      <td><img src="{{ asset('galery/')}}{{image.path }}" alt="slika" width="50"/></td>
+      <td>
+          <a href="{{ asset('galery/')}}{{image.path }}" rel="lightbox">
+            <img src="{{ asset('galery/')}}{{image.path }}" alt="slika" width="50"/>
+          </a>
+      </td>
       <td><a href="{{ path('_admin_edit_image', {'id': image.id}) }}" title="Uredi Sliko">
               <i class="icon-edit"></i>Uredi</a>&nbsp;
               <a href="{{ path('_admin_delete_image', {'id': image.id } ) }}" class="confirmation" title="Odstrani sliko" data-confirmation="Ali si prepričan?">

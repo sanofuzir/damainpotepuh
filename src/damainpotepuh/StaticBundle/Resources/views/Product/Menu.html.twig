@@ -1,11 +1,10 @@
 {% for subcategory in subcategorys %}
     <ul>
-        <li>
-            <a href="{{ path('_product_subcategory', 
+        <a href="{{ path('_product_subcategory', 
                             {'categoryName': subcategory.category,
                             'subcategoryName': subcategory.subcategory}) }}">
-                {{ subcategory.subcategory }}
-            </a>
-        </li>
+        <li>{{ subcategory.subcategory }}</li>
+        <hr />
+        </a>
     </ul>
 {% endfor %}

@@ -15,6 +15,14 @@ class AdType extends AbstractType
                 'attr'  => array('class' => 'span7'),
                 'label' => 'Ime oglasa'
             ))
+            ->add('telephone',null, array(
+                'attr'  => array('class' => 'span7'),
+                'label' => 'Telefon'
+            ))
+            ->add('email', 'email', array(
+                'attr'  => array('class' => 'span7'),
+                'label' => 'Email'
+            ))
             ->add('text', 'textarea', array(
                 'attr'  => array('class' => 'span7', 'rows' => 15, 'cols'=>80),
                 'label' => 'Oglas'

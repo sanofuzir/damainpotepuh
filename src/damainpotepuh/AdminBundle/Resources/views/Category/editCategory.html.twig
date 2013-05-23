@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Kategorije</h2>
-<form action="{{ category.id ? path('_admin_edit_category', {'id': category.id}) : path('_admin_add_category') }}" method="post" {{ form_enctype(form) }} novalidate>
+<form class="ad_form" action="{{ category.id ? path('_admin_edit_category', {'id': category.id}) : path('_admin_add_category') }}" method="post" {{ form_enctype(form) }} novalidate>
     {{ form_widget(form) }}
     <!--div class="form-actions"-->
         <input type="submit" name="save" value="Shrani" class="btn btn-primary">

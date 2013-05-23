@@ -3,8 +3,45 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-
-<h2>Index stran</h2>
-<p>Nalovnica, reklame, oglasi itd...</p>
+<div class="header-img">
+    <img src="{{ asset('bundles/damainpotepuhstatic/images/index.jpg') }}" alt="images"/>
+</div>
+<div class="index-container">
+    <p class="header-text-white">TRGOVINA
+        <p class="header-text">ZA MALE ŽIVALI</p>
+    </p>
+    <ul>
+        <li>
+            <a href="{{ path('_dogs') }}">
+            <img src="{{ asset('bundles/damainpotepuhstatic/images/dog.jpg') }}" alt="psi"/>
+            <p class="index-link">PSI</p></a>
+        </li>
+        <li>
+            <a href="{{ path('_cats') }}">
+            <img src="{{ asset('bundles/damainpotepuhstatic/images/cat.jpg') }}" alt="cat"/>
+            <p class="index-link">MAČKE</p></a>
+        </li>
+        <li>
+            <a href="{{ path('_birds') }}">
+            <img src="{{ asset('bundles/damainpotepuhstatic/images/bird.jpg') }}" alt="bird"/>
+            <p class="index-link">PTICE</p></a>
+        </li>
+        <li>
+            <a href="{{ path('_rodents') }}">
+            <img src="{{ asset('bundles/damainpotepuhstatic/images/rodent.jpg') }}" alt="rodent"/>
+            <p class="index-link">GLODALCI</p></a>
+        </li>
+        <li>
+            <a href="{{ path('_fishes') }}">
+            <img src="{{ asset('bundles/damainpotepuhstatic/images/fish.jpg') }}" alt="fish"/>
+            <p class="index-link">RIBE</p></a>
+        </li>
+        <li>
+            <a href="{{ path('_action_products') }}">
+            <img src="{{ asset('bundles/damainpotepuhstatic/images/action_products.jpg') }}" alt="hamster"/>
+            <p class="index-link">AKCIJSKI IZDELKI</p></a>
+        </li>
+    </ul>
+</div>
 
 {% endblock %}
