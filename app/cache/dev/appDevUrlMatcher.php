@@ -413,6 +413,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // _home
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', '_home');
+            }
+
+            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::indexAction',  '_route' => '_home',);
+        }
+
         // _o_nas
         if ($pathinfo === '/o_nas') {
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::aboutAction',  '_route' => '_o_nas',);
@@ -426,15 +435,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // _kontakt
         if ($pathinfo === '/kontakt') {
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::contactAction',  '_route' => '_kontakt',);
-        }
-
-        // _home
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', '_home');
-            }
-
-            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\ProductController::indexAction',  '_route' => '_home',);
         }
 
         if (0 === strpos($pathinfo, '/artikli')) {

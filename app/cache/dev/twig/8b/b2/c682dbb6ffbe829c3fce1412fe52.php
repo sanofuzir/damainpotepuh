@@ -40,7 +40,8 @@ class __TwigTemplate_8bb2c682dbb6ffbe829c3fce1412fe52 extends Twig_Template
 <table id=\"contact\">
     <tr>
         <td  style=\"padding-top: -100px;\">
-            <h2>Kontakt</h2>
+            <div>
+            <h1>Kontakt</h1>
             <b>DAMA IN POTEPUH, Nina Grabnar s.p.</b><br />
             Dolenska cesta 149<br />
             1000 Ljubljana<br />
@@ -50,8 +51,9 @@ class __TwigTemplate_8bb2c682dbb6ffbe829c3fce1412fe52 extends Twig_Template
                 Telefon:    <br />
                 GSM: +386 70 852 660<br />
                 GSM: +386 41 247 294<br />
-                email:<a href=\"mailto:ninagrabnar293@gmail.com\"> ninagrabnar293@gmail.com</a>
-            </p>    
+                email:<a href=\"mailto:info@damainpotepuh.si\"> info@damainpotepuh.si</a>
+            </p> 
+            </div>
         </td>
         <td style=\"padding-left: 100px;\">
             <h3>Kje smo?</h3>

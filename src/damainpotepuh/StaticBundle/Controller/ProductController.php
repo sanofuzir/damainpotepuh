@@ -42,16 +42,7 @@ class ProductController extends Controller
     {
         return $this->container->get('damainpotepuh.subcategory_manager');
     }
-    
-    /**
-     * @Route("/", name="_home")
-     * @Template()
-     */
-    public function indexAction()
-    {
-        return array();
-    }
-        
+
     /**
      * @Route("/artikli", name="_artikli")
      * @Template()

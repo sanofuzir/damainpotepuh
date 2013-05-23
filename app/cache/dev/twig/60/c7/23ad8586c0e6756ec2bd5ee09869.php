@@ -44,7 +44,7 @@ class __TwigTemplate_60c723ad8586c0e6756ec2bd5ee09869 extends Twig_Template
         // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_add_subcategory"), "html", null, true);
         echo "\"><i class=\"icon-plus\"></i> Dodaj podkategorijo</a>
-<table class=\"table table-condensed table-hover\">
+<table style=\"background-color: #F9D49E;\" class=\"table table-condensed table-hover\">
   <thead>
     <tr>
       <th>Id</th>
@@ -88,7 +88,7 @@ class __TwigTemplate_60c723ad8586c0e6756ec2bd5ee09869 extends Twig_Template
         echo "  </tbody>
 </table>
 <h2>Podkategorije</h2>
-<table class=\"table table-condensed table-hover\">
+<table style=\"background-color: #F9D49E;\" class=\"table table-condensed table-hover\">
   <thead>
     <tr>
       <th>Id</th>

@@ -37,23 +37,25 @@ class __TwigTemplate_16aa5e5ae7c6b4366bd85340b37e0228 extends Twig_Template
         // line 6
         echo "<h2>Admin - nadzorna plošča</h2>
 <br />
-<hr />
-<a href=\"";
+<div class=\"admin\">
+    <a href=\"";
         // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_products"), "html", null, true);
         echo "\"><h4>Urejanje izdelkov</h4></a><br />
-<a href=\"";
+    <a href=\"";
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_categorys"), "html", null, true);
         echo "\"><h4>Urejanje kategorij</h4></a><br />
-<a href=\"";
+    <a href=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_images"), "html", null, true);
         echo "\"><h4>Urejanje Galerije</h4></a><br />
-<a href=\"";
+    <a href=\"";
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_ads"), "html", null, true);
         echo "\"><h4>Urejanje Oglasev</h4></a>
+
+</div>
 
 ";
     }
