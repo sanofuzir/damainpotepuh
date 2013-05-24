@@ -40,7 +40,7 @@ class __TwigTemplate_bf25af6ab6f9872acca775e6122db3e3 extends Twig_Template
         // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_add_product"), "html", null, true);
         echo "\"><i class=\"icon-plus\"></i> Dodaj Izdelek</a>
-<table class=\"table table-condensed table-hover\">
+<table style=\"background-color: #F9D49E;\" class=\"table table-condensed table-hover\">
   <thead>
     <tr>
       <th>Id</th>
@@ -73,7 +73,7 @@ class __TwigTemplate_bf25af6ab6f9872acca775e6122db3e3 extends Twig_Template
       <td>";
             // line 27
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "price"), "html", null, true);
-            echo "</td>
+            echo "€</td>
       <td>";
             // line 28
             echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "description")) > 50)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "description"), 0, 50) . "...")) : ($this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "description"))), "html", null, true);

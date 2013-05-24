@@ -21,18 +21,17 @@ class __TwigTemplate_0fb83ff9c291421857faa6ccfc0d6377 extends Twig_Template
         foreach ($context['_seq'] as $context["_key"] => $context["subcategory"]) {
             // line 2
             echo "    <ul>
-        <li>
-            <a href=\"";
-            // line 4
+        <a href=\"";
+            // line 3
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_product_subcategory", array("categoryName" => $this->getAttribute((isset($context["subcategory"]) ? $context["subcategory"] : $this->getContext($context, "subcategory")), "category"), "subcategoryName" => $this->getAttribute((isset($context["subcategory"]) ? $context["subcategory"] : $this->getContext($context, "subcategory")), "subcategory"))), "html", null, true);
-            // line 6
+            // line 5
             echo "\">
-                ";
-            // line 7
+        <li>";
+            // line 6
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["subcategory"]) ? $context["subcategory"] : $this->getContext($context, "subcategory")), "subcategory"), "html", null, true);
-            echo "
-            </a>
-        </li>
+            echo "</li>
+        <hr />
+        </a>
     </ul>
 ";
         }
@@ -53,6 +52,6 @@ class __TwigTemplate_0fb83ff9c291421857faa6ccfc0d6377 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  32 => 7,  27 => 4,  23 => 2,  19 => 1,  92 => 31,  82 => 28,  78 => 27,  74 => 26,  70 => 25,  66 => 24,  63 => 23,  59 => 22,  43 => 9,  38 => 6,  35 => 5,  29 => 6,);
+        return array (  31 => 6,  28 => 5,  26 => 3,  23 => 2,  19 => 1,  91 => 27,  80 => 23,  76 => 22,  71 => 20,  66 => 18,  63 => 17,  59 => 16,  52 => 12,  48 => 11,  41 => 7,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

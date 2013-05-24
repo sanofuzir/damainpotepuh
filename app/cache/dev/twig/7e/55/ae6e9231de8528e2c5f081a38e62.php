@@ -36,7 +36,7 @@ class __TwigTemplate_7e55ae6e9231de8528e2c5f081a38e62 extends Twig_Template
     {
         // line 6
         echo "<h2>Izdelki</h2>
-<form action=\"";
+<form class=\"ad_form\" action=\"";
         // line 7
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "id")) ? ($this->env->getExtension('routing')->getPath("_admin_edit_product", array("id" => $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "id")))) : ($this->env->getExtension('routing')->getPath("_admin_add_product"))), "html", null, true);
         echo "\" method=\"post\" ";

@@ -102,6 +102,14 @@
         '@damainpotepuhStaticBundle/Resources/assets/js/*' %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
 
   </body>
 </html>
