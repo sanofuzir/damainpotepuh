@@ -39,9 +39,9 @@ class __TwigTemplate_8bb2c682dbb6ffbe829c3fce1412fe52 extends Twig_Template
 
 <table id=\"contact\">
     <tr>
-        <td  style=\"padding-top: -100px;\">
-            <div>
-            <h1>Kontakt</h1>
+        <td>
+            <div style=\"margin-top: 50px;\">
+            <h1 style=\"text-shadow: none;\">Kontakt</h1>
             <b>DAMA IN POTEPUH, Nina Grabnar s.p.</b><br />
             Dolenska cesta 149<br />
             1000 Ljubljana<br />
@@ -56,7 +56,7 @@ class __TwigTemplate_8bb2c682dbb6ffbe829c3fce1412fe52 extends Twig_Template
             </div>
         </td>
         <td style=\"padding-left: 100px;\">
-            <h3>Kje smo?</h3>
+            <h2>Kje smo?</h2>
             <iframe width=\"425\" height=\"350\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" 
                     src=\"https://maps.google.com/maps?q=Dolenska+cesta+149&amp;ie=UTF8&amp;hl=en&amp;hq=Dolenska+cesta+149&amp;hnear=&amp;t=h&amp;ll=46.021352,14.541746&amp;spn=0.006295,0.006295&amp;output=embed\">
             </iframe><br />

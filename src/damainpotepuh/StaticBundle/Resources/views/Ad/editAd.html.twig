@@ -3,7 +3,8 @@
 {% block title %}Oglasi{% endblock %}
 
 {% block content %}
-<h2>Oglasi</h2>
+<h2>Dodaj Oglas</h2>
+
 <form class="ad_form" action="{{ ad.id ? path('_edit_ad', {'id': ad.id}) : path('_add_ad') }}" method="post" {{ form_enctype(form) }} novalidate>
     {{ form_widget(form) }}
     <!--div class="form-actions"-->

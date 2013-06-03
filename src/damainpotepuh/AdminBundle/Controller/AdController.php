@@ -30,7 +30,7 @@ class AdController extends Controller
      */
     public function adsAction()
     {
-        $ads = $this->getAdManager()->findAllads();
+        $ads = $this->getAdManager()->findAllAds();
 
         return array( 'ads' => $ads);
     }

@@ -397,7 +397,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // _zmenkarije
         if ($pathinfo === '/zmenkarije') {
-            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\AdController::AdsAction',  '_route' => '_zmenkarije',);
+            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\AdController::adsAction',  '_route' => '_zmenkarije',);
         }
 
         if (0 === strpos($pathinfo, '/ad')) {

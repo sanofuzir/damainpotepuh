@@ -35,36 +35,44 @@ class __TwigTemplate_a3a34aa2a11ce7e42c7adf1fae418af8 extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         // line 6
-        echo "<h2>Galerija</h2>
+        echo "
+<h1 style=\"text-shadow: none;\">Galerija</h1>
 
-<table class=\"galery\">
+<div class=\"gallery-container\">
+
     ";
-        // line 9
+        // line 11
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["images"]) ? $context["images"] : $this->getContext($context, "images")));
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-            // line 10
-            echo "    <tr>
-      <td><img src=\"";
-            // line 11
+            // line 12
+            echo "            <div class=\"img-container\">
+                <a href=\"";
+            // line 13
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("galery/"), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "path"), "html", null, true);
-            echo "\" alt=\"slika\" /></td>
-      <td><span class=\"description\">
-          ";
-            // line 13
+            echo "\" rel=\"lightbox[gallery]\">
+                    <img src=\"";
+            // line 14
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("galery/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "path"), "html", null, true);
+            echo "\" alt=\"image\" />
+                    <div class=\"img-info\">
+                        <h4>";
+            // line 16
             echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "description")) > 50)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "description"), 0, 50) . "...")) : ($this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "description"))), "html", null, true);
-            echo "
-          </span>
-      </td>
-    </tr>
+            echo "</h4>
+                    </div>
+                </a>
+            </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 18
-        echo "</table>
+        // line 21
+        echo "
+</div>
 
 ";
     }
@@ -81,6 +89,6 @@ class __TwigTemplate_a3a34aa2a11ce7e42c7adf1fae418af8 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  67 => 18,  56 => 13,  50 => 11,  47 => 10,  43 => 9,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  74 => 21,  63 => 16,  57 => 14,  52 => 13,  49 => 12,  45 => 11,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

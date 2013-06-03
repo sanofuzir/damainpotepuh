@@ -47,8 +47,8 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/products-img.jpg"), "html", null, true);
         echo "\" alt=\"\">
           <div class=\"container\">
-            <div class=\"carousel-caption\">
-              <h1>Ptice - slogan</h1>
+            <div style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Ptice - slogan</h2>
             </div>
           </div>
         </div>
@@ -58,8 +58,8 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/products-img2.jpg"), "html", null, true);
         echo "\" alt=\"\">
           <div class=\"container\">
-            <div class=\"carousel-caption\">
-              <h1>Hrčki - slogan</h1>
+            <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Hrčki - slogan</h2>
             </div>
           </div>
         </div>
@@ -69,8 +69,8 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/products-img3.jpg"), "html", null, true);
         echo "\" alt=\"\">
           <div class=\"container\">
-            <div class=\"carousel-caption\">
-              <h1>Glodalci - slogan</h1>
+            <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Glodalci - slogan</h2>
             </div>
           </div>
         </div>
@@ -80,8 +80,8 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/products-img4.jpg"), "html", null, true);
         echo "\" alt=\"\">
           <div class=\"container\">
-            <div class=\"carousel-caption\">
-              <h1>Ptice - slogan</h1>
+            <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Ribe - slogan</h2>
             </div>
           </div>
         </div>
@@ -91,8 +91,8 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/products-img5.jpg"), "html", null, true);
         echo "\" alt=\"\">
           <div class=\"container\">
-            <div class=\"carousel-caption\">
-              <h1>Ptice - slogan</h1>
+            <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Psi - slogan</h2>
             </div>
           </div>
         </div>
@@ -102,8 +102,8 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/products-img6.jpg"), "html", null, true);
         echo "\" alt=\"\">
           <div class=\"container\">
-            <div class=\"carousel-caption\">
-              <h1>Ptice - slogan</h1>
+            <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Mačke - slogan</h2>
             </div>
           </div>
         </div>
@@ -135,20 +135,21 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
             echo "    <div class=\"product\">
         <h2>";
             // line 75
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"), "html", null, true);
+            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name")) > 40)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"), 0, 40) . "...")) : ($this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"))), "html", null, true);
+            // line 77
             echo "</h2>
         <p class=\"product_link\">
             <a href=\"";
-            // line 77
+            // line 79
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_single_product", array("id" => $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "id"))), "html", null, true);
             echo "\" >Več...&raquo;</a>
         </p>
         <p class=\"price-info\" style=\"margin-left: 0px;\"><span style=\"padding-right: 20px;\">";
-            // line 79
+            // line 81
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "price"), "html", null, true);
             echo " €</span></p>
         <img src=\"";
-            // line 80
+            // line 82
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("products/"), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "path"), "html", null, true);
             echo "\" alt=\"slika\"/>
@@ -159,7 +160,7 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 84
+        // line 86
         echo "</div>
 
 ";
@@ -177,6 +178,6 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  163 => 84,  152 => 80,  148 => 79,  143 => 77,  138 => 75,  135 => 74,  131 => 73,  124 => 69,  120 => 68,  102 => 53,  91 => 45,  80 => 37,  69 => 29,  58 => 21,  47 => 13,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  164 => 86,  153 => 82,  149 => 81,  144 => 79,  140 => 77,  138 => 75,  135 => 74,  131 => 73,  124 => 69,  120 => 68,  102 => 53,  91 => 45,  80 => 37,  69 => 29,  58 => 21,  47 => 13,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

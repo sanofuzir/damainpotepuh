@@ -36,7 +36,7 @@ class __TwigTemplate_49d6852246cb20011ccde0ce38e77df0 extends Twig_Template
     {
         // line 6
         echo "
-<h1>Zmenkarije, oglasi</h1>
+<h1>Oglasi</h1>
 
 <a class=\"addbutton\" href=\"";
         // line 9
@@ -51,36 +51,36 @@ class __TwigTemplate_49d6852246cb20011ccde0ce38e77df0 extends Twig_Template
             // line 12
             echo "        <div class=\"ad\">
             <div class=\"ad-text\">
-                <h4>Ime: </h4>";
+                <a class=\"ad-img\" href=\"";
             // line 14
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("ads/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "path"), "html", null, true);
+            echo "\" rel=\"lightbox\" alt=\"slika\">
+                    <img src=\"";
+            // line 15
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("ads/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "path"), "html", null, true);
+            echo "\" alt=\"slika\" />
+                </a>
+                <h4>Ime: </h4>";
+            // line 17
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "name"), "html", null, true);
             echo "
                 <h4>Telefon: </h4>";
-            // line 15
+            // line 18
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "telephone"), "html", null, true);
             echo "
                 <h4>Email: </h4>";
-            // line 16
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "email"), "html", null, true);
             echo "
                 <span class=\"description\">
                     <h4>Oglas: </h4>";
-            // line 18
-            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "text")) > 50)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "text"), 0, 50) . "...")) : ($this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "text"))), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "text"), "html", null, true);
             echo "
                 </span>
             </div>
-            <a href=\"";
-            // line 21
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("ads/"), "html", null, true);
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "path"), "html", null, true);
-            echo "\" rel=\"lightbox\" alt=\"slika\">
-                <img src=\"";
-            // line 22
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("ads/"), "html", null, true);
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "path"), "html", null, true);
-            echo "\" alt=\"slika\" />
-            </a>
         </div>
     ";
         }
@@ -104,6 +104,6 @@ class __TwigTemplate_49d6852246cb20011ccde0ce38e77df0 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 26,  80 => 22,  75 => 21,  69 => 18,  64 => 16,  60 => 15,  56 => 14,  52 => 12,  48 => 11,  43 => 9,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  91 => 26,  80 => 21,  75 => 19,  71 => 18,  67 => 17,  61 => 15,  56 => 14,  52 => 12,  48 => 11,  43 => 9,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

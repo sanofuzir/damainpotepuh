@@ -110,7 +110,7 @@ class __TwigTemplate_5aa288888cbc00c4cd940f628fd8a296 extends Twig_Template
         // line 41
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/action_products.jpg"), "html", null, true);
         echo "\" alt=\"hamster\"/>
-            <p class=\"index-link\">AKCIJSKI IZDELKI</p></a>
+            <p class=\"index-link\">AKCIJSKI <br />IZDELKI</p></a>
         </li>
     </ul>
 </div>

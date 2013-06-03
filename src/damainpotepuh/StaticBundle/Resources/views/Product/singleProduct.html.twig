@@ -4,7 +4,64 @@
 
 {% block content %}
 <div class="header-img">
-    <img src="{{ asset('bundles/damainpotepuhstatic/images/Slides/cat-header.jpg') }}" alt="images"/>
+    
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="{{ asset('bundles/damainpotepuhstatic/images/products-img.jpg') }}" alt="">
+          <div class="container">
+            <div style="background: none;" class="damainpotepuh-carousel-caption carousel-caption">
+              <h2 style="color: #fff; margin-left: 200px; margin-top: -250px;">Ptice - slogan</h2>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{{ asset('bundles/damainpotepuhstatic/images/products-img2.jpg') }}" alt="">
+          <div class="container">
+            <div  style="background: none;" class="damainpotepuh-carousel-caption carousel-caption">
+              <h2 style="color: #fff; margin-left: 200px; margin-top: -250px;">Hrčki - slogan</h2>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{{ asset('bundles/damainpotepuhstatic/images/products-img3.jpg') }}" alt="">
+          <div class="container">
+            <div  style="background: none;" class="damainpotepuh-carousel-caption carousel-caption">
+              <h2 style="color: #fff; margin-left: 200px; margin-top: -250px;">Glodalci - slogan</h2>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{{ asset('bundles/damainpotepuhstatic/images/products-img4.jpg') }}" alt="">
+          <div class="container">
+            <div  style="background: none;" class="damainpotepuh-carousel-caption carousel-caption">
+              <h2 style="color: #fff; margin-left: 200px; margin-top: -250px;">Ribe - slogan</h2>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{{ asset('bundles/damainpotepuhstatic/images/products-img5.jpg') }}" alt="">
+          <div class="container">
+            <div  style="background: none;" class="damainpotepuh-carousel-caption carousel-caption">
+              <h2 style="color: #fff; margin-left: 200px; margin-top: -250px;">Psi - slogan</h2>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{{ asset('bundles/damainpotepuhstatic/images/products-img6.jpg') }}" alt="">
+          <div class="container">
+            <div  style="background: none;" class="damainpotepuh-carousel-caption carousel-caption">
+              <h2 style="color: #fff; margin-left: 200px; margin-top: -250px;">Mačke - slogan</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+ 
 </div>
 
 <div class="menu">
@@ -16,13 +73,11 @@
     <div class="singleProduct product">
         <h2>{{ product.name }}</h2>
         <p><b>Opis:</b><br />
-           {{ product.description|length > 50 ? 
-              product.description|slice(0, 50) ~ '...' : 
-              product.description }}
+           {{ product.description }}
         </p>
         <p>Dodan {{ product.created|date('d.m.Y') }}<p>
         <p><span class="price">{{ product.price }} €</span></p>
-        <a href="{{ asset('products/')}}{{product.path }}" rel="lightbox">
+        <a href="{{ asset('products/')}}{{product.path }}" rel="lightbox" >
             <img src="{{ asset('products/')}}{{product.path }}" alt="slika"/>
         </a>
     </div>

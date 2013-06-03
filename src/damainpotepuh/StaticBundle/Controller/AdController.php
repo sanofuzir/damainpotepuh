@@ -28,9 +28,9 @@ class AdController extends Controller
      * @Route("/zmenkarije", name="_zmenkarije")
      * @Template()
      */
-    public function AdsAction()
+    public function adsAction()
     {
-        $ads = $this->getAdManager()->findAllads();
+        $ads = $this->getAdManager()->findAllAds();
 
         return array( 'ads' => $ads);
     }

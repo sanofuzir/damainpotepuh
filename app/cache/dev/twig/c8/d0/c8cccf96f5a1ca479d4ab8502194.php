@@ -36,7 +36,7 @@ class __TwigTemplate_c8d0c8cccf96f5a1ca479d4ab8502194 extends Twig_Template
     {
         // line 6
         echo "<h2>Oglasi</h2>
-<form action=\"";
+<form class=\"ad_form\" action=\"";
         // line 7
         echo twig_escape_filter($this->env, (($this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "id")) ? ($this->env->getExtension('routing')->getPath("_edit_ad", array("id" => $this->getAttribute((isset($context["ad"]) ? $context["ad"] : $this->getContext($context, "ad")), "id")))) : ($this->env->getExtension('routing')->getPath("_add_ad"))), "html", null, true);
         echo "\" method=\"post\" ";
@@ -47,7 +47,7 @@ class __TwigTemplate_c8d0c8cccf96f5a1ca479d4ab8502194 extends Twig_Template
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
     <!--div class=\"form-actions\"-->
-        <input type=\"submit\" name=\"save\" value=\"Shrani\" class=\"btn btn-primary\">
+        <input type=\"submit\" name=\"save\" value=\"Shrani\" class=\"ad_form_save btn btn-primary\">
     <!--/div-->
 </form>
 

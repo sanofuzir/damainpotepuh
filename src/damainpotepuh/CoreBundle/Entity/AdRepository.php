@@ -15,7 +15,7 @@ class AdRepository extends EntityRepository
     public function findAll() 
     {
         return $this->getEntityManager()
-                    ->createQuery('SELECT i FROM damainpotepuhCoreBundle:ad i ORDER BY i.created DESC')
+                    ->createQuery('SELECT a FROM damainpotepuhCoreBundle:ad a ORDER BY a.created DESC')
                     ->getResult();
     }
 }

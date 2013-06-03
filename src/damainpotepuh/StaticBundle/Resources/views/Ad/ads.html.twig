@@ -4,23 +4,25 @@
 
 {% block content %}
 
-<h1>Zmenkarije, oglasi</h1>
+<h1 style="text-shadow: none;">Oglasi</h1>
 
 <a class="addbutton" href="{{ path('_add_ad') }}">Dodaj oglas</a>
 
     {% for ad in ads %}
-        <div class="ad">
+        <div class="ad" style="background-image: url('../../../bundles/damainpotepuhstatic/images/ad_background.jpg');">
             <div class="ad-text">
+                <a class="ad-img" style="position: absolute; width: 150px; margin: 10px 0px 0px 250px;"
+                   href="{{ asset('ads/')}}{{ad.path }}" rel="lightbox" alt="slika">
+                    <img src="{{ asset('ads/')}}{{ad.path }}" alt="slika" />
+                </a>
                 <h4>Ime: </h4>{{ad.name}}
                 <h4>Telefon: </h4>{{ad.telephone}}
                 <h4>Email: </h4>{{ad.email}}
+                <h4>Datum objave: </h4>{{ad.created|date('d.m.Y')}}
                 <span class="description">
-                    <h4>Oglas: </h4>{{ ad.text|length > 50 ? ad.text|slice(0, 50) ~ '...' : ad.text }}
+                    <h4>Oglas: </h4>{{ ad.text }}
                 </span>
             </div>
-            <a href="{{ asset('ads/')}}{{ad.path }}" rel="lightbox" alt="slika">
-                <img src="{{ asset('ads/')}}{{ad.path }}" alt="slika" />
-            </a>
         </div>
     {% endfor %}
 

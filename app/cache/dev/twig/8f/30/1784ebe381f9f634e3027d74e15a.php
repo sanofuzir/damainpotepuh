@@ -98,15 +98,15 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
           </a>          
           <div class=\"nav-collapse-damainpotepuh nav-collapse collapse\">
               <ul class=\"nav\">
-                <li style=\"margin-left: 35px;\"><a href=\"";
+                <li style=\"margin-left: 30px;\"><a href=\"";
         // line 42
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_home"), "html", null, true);
         echo "\" style=\"color: #fff;\">DOMOV</a></li>
-                <li style=\"margin-left: 35px;\"><a href=\"";
+                <li style=\"margin-left: 33px;\"><a href=\"";
         // line 43
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_o_nas"), "html", null, true);
         echo "\" style=\"color: #fff;\">O NAS</a></li>
-                 <li class=\"dropdown\"  style=\"margin-left: 40px;\">
+                 <li class=\"dropdown\"  style=\"margin-left: 33px;\">
                   <a href=\"";
         // line 45
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_artikli"), "html", null, true);
@@ -147,15 +147,15 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
         echo "\" style=\"color: #fff;\">ŠMENSI-FENSI</a></li>
                   </ul>
                 </li>
-                <li style=\"margin-left: 35px;\"><a href=\"";
+                <li style=\"margin-left: 33px;\"><a href=\"";
         // line 58
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_galerija"), "html", null, true);
         echo "\" style=\"color: #fff;\">GALERIJA</a></li>
-                <li style=\"margin-left: 35px;\"><a href=\"";
+                <li style=\"margin-left: 33px;\"><a href=\"";
         // line 59
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_kontakt"), "html", null, true);
         echo "\" style=\"color: #fff;\">KONTAKT</a></li>
-                <li style=\"margin-left: 35px;\">
+                <li style=\"margin-left: 33px;\">
                     <img src=\"";
         // line 61
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/damainpotepuhstatic/images/heart.jpg"), "html", null, true);
@@ -215,7 +215,12 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
 </div>
     <div id=\"footer\">
         <div class=\"container\">
-            <p class=\"damainpotepuh-footer muted credit\"><span style=\"background-color: #F9D49E; padding: 0px 5px;\">Dama in potepuh - Trgovina za male živali, Nina Grabnar s.p. Dolenska cesta 149, 1000 Ljubljana</span></p>  
+            <hr />
+            <p class=\"damainpotepuh-footer muted credit\">
+                <span style=\"background-color: #F9D49E; padding: 0px 5px;\">
+                    Dama in potepuh - Trgovina za male živali, Nina Grabnar s.p. Dolenska cesta 149, 1000 Ljubljana
+                </span>
+            </p>            
         </div>
     </div>     
     
@@ -224,11 +229,11 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     ";
-        // line 97
+        // line 102
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
             // asset "2f5d228_0"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_2f5d228_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/scripts_jquery-1.9.1_1.js");
-            // line 103
+            // line 108
             echo "        <script src=\"";
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
@@ -266,7 +271,7 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
     ";
         }
         unset($context["asset_url"]);
-        // line 105
+        // line 110
         echo "    <script>
       !function (\$) {
         \$(function(){
@@ -305,6 +310,6 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  293 => 80,  290 => 79,  285 => 8,  270 => 105,  232 => 103,  228 => 97,  210 => 81,  208 => 79,  198 => 76,  187 => 74,  182 => 73,  178 => 72,  165 => 62,  161 => 61,  156 => 59,  152 => 58,  146 => 55,  142 => 54,  138 => 53,  133 => 51,  129 => 50,  125 => 49,  121 => 48,  117 => 47,  107 => 43,  103 => 42,  96 => 38,  92 => 37,  75 => 22,  43 => 20,  39 => 14,  30 => 8,  21 => 1,  175 => 96,  164 => 92,  160 => 91,  155 => 89,  150 => 87,  147 => 86,  143 => 85,  136 => 81,  132 => 80,  112 => 45,  99 => 53,  86 => 43,  73 => 33,  60 => 23,  47 => 13,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  298 => 80,  295 => 79,  290 => 8,  275 => 110,  237 => 108,  233 => 102,  210 => 81,  208 => 79,  198 => 76,  187 => 74,  182 => 73,  178 => 72,  165 => 62,  161 => 61,  156 => 59,  152 => 58,  146 => 55,  142 => 54,  138 => 53,  133 => 51,  129 => 50,  125 => 49,  121 => 48,  117 => 47,  112 => 45,  107 => 43,  103 => 42,  96 => 38,  92 => 37,  75 => 22,  43 => 20,  39 => 14,  30 => 8,  21 => 1,);
     }
 }

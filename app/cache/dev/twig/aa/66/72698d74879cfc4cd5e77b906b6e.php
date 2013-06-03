@@ -36,7 +36,7 @@ class __TwigTemplate_aa6672698d74879cfc4cd5e77b906b6e extends Twig_Template
     {
         // line 6
         echo "
-<h1>O nas</h1>
+<h1 style=\"text-shadow: none;\">O nas</h1>
 <div class=\"about\">
     SMO MAJČKENO DRUŽINSKO PODJETJE ( 8 ČLANOV :), KI NAM JE LJUBEZEN DO ŽIVALI, ŽIVLJENJE OBRNILO NA GLAVO, 
     Z NAKUPOM PRVE PSIČKE CANE CORSICE- CANE SMO SE INTENZIVNO ZAČELI UKVARJATI Z RAZSTAVAMI, ŠOLANJEM, 

@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  *
  * @ORM\Table(name="ad")
  * @ORM\Entity
- * @ORM\Entity(repositoryClass="damainpotepuh\CoreBundle\Entity\adRepository")
+ * @ORM\Entity(repositoryClass="damainpotepuh\CoreBundle\Entity\AdRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Ad
