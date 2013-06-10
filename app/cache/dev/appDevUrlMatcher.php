@@ -370,6 +370,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/admin/news')) {
+                // _admin_news
+                if ($pathinfo === '/admin/news') {
+                    return array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\NewsController::newsAction',  '_route' => '_admin_news',);
+                }
+
+                // _admin_delete_news
+                if (0 === strpos($pathinfo, '/admin/news/delete') && preg_match('#^/admin/news/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_delete_news')), array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\NewsController::deleteNewsAction',));
+                }
+
+                // _admin_add_news
+                if ($pathinfo === '/admin/news/add') {
+                    return array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\NewsController::editNewsAction',  '_route' => '_admin_add_news',);
+                }
+
+                // _admin_edit_news
+                if (0 === strpos($pathinfo, '/admin/news/edit') && preg_match('#^/admin/news/edit(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_edit_news')), array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\NewsController::editNewsAction',));
+                }
+
+            }
+
             if (0 === strpos($pathinfo, '/admin/product')) {
                 // _admin_products
                 if ($pathinfo === '/admin/products') {

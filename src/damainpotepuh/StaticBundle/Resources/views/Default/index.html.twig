@@ -39,9 +39,22 @@
         <li>
             <a href="{{ path('_action_products') }}">
             <img src="{{ asset('bundles/damainpotepuhstatic/images/action_products.jpg') }}" alt="hamster"/>
-            <p class="index-link">AKCIJSKI <br />IZDELKI</p></a>
+            <p class="index-link">AKCIJE</p></a>
         </li>
     </ul>
+</div>
+
+<div class="news">
+    <h2>Novice</h2>
+
+    {% for OneNews in news %}
+    <div class="Singlenews">
+        <h3>{{ OneNews.name }}</h3>
+        <p>{{ OneNews.text }}</p><br />
+        <p>{{ OneNews.created|date('d.m.Y') }}</p>
+    </div>
+    {% endfor %}
+
 </div>
 
 {% endblock %}

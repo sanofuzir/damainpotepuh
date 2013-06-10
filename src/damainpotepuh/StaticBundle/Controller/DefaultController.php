@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use damainpotepuh\CoreBundle\Entity\Image;
 use damainpotepuh\CoreBundle\Models\ImageManager;
+use damainpotepuh\CoreBundle\Entity\News;
+use damainpotepuh\CoreBundle\Models\NewsManager;
 
 class DefaultController extends Controller
 {
@@ -24,12 +26,22 @@ class DefaultController extends Controller
     }
     
     /**
+     * @return NewsManager
+     */
+    private function getNewsManager()
+    {
+        return $this->container->get('damainpotepuh.news_manager');
+    }
+    
+    /**
      * @Route("/", name="_home")
      * @Template()
      */
     public function indexAction()
     {
-        return array();
+        $news = $this->getNewsManager()->findAllWithLimit(3);
+
+        return array( 'news' => $news);
     }
     
     /**
