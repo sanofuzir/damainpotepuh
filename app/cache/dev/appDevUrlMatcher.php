@@ -60,6 +60,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/js/scripts')) {
+            // _assetic_f60858d
+            if ($pathinfo === '/js/scripts.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'f60858d',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_f60858d',);
+            }
+
+            if (0 === strpos($pathinfo, '/js/scripts_')) {
+                // _assetic_f60858d_0
+                if ($pathinfo === '/js/scripts_jquery-1.7.2_1.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f60858d',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_f60858d_0',);
+                }
+
+                // _assetic_f60858d_1
+                if ($pathinfo === '/js/scripts_lightbox_2.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f60858d',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_f60858d_1',);
+                }
+
+                // _assetic_f60858d_2
+                if ($pathinfo === '/js/scripts_bootstrap_3.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f60858d',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_f60858d_2',);
+                }
+
+                // _assetic_f60858d_3
+                if ($pathinfo === '/js/scripts_part_4_script_1.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f60858d',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_f60858d_3',);
+                }
+
+            }
+
             // _assetic_2f5d228
             if ($pathinfo === '/js/scripts.js') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => '2f5d228',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_2f5d228',);

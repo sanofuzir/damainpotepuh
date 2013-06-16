@@ -48,7 +48,7 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo "\" alt=\"\">
           <div class=\"container\">
             <div style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
-              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Ptice - slogan</h2>
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">\"Ptice so svobodna bitja ki letajo iz veje na vejo\"</h2>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo "\" alt=\"\">
           <div class=\"container\">
             <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
-              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Hrčki - slogan</h2>
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">\"Hrčki so mala in nagajiva bitja, ki se vedno zabavajo\"</h2>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo "\" alt=\"\">
           <div class=\"container\">
             <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
-              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Glodalci - slogan</h2>
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">\"Glodalci... vedno lačni\"</h2>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo "\" alt=\"\">
           <div class=\"container\">
             <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
-              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Ribe - slogan</h2>
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">\"Ribe so mirna bitja, ki vedno presenečajo\"</h2>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo "\" alt=\"\">
           <div class=\"container\">
             <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
-              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Psi - slogan</h2>
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">\"Psi je človekov najboljši prijatelj\"</h2>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         echo "\" alt=\"\">
           <div class=\"container\">
             <div  style=\"background: none;\" class=\"damainpotepuh-carousel-caption carousel-caption\">
-              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">Mačke - slogan</h2>
+              <h2 style=\"color: #fff; margin-left: 200px; margin-top: -250px;\">\"Mačke so čudovita in intelegentna bitja\"</h2>
             </div>
           </div>
         </div>
@@ -133,9 +133,9 @@ class __TwigTemplate_4221cdd57be976a718020b6c39d1297d extends Twig_Template
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
             // line 74
             echo "    <div class=\"product\">
-        <h2>";
+        <h2 style=\"line-height: 18px; font-size: 1em;\" >";
             // line 75
-            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name")) > 40)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"), 0, 40) . "...")) : ($this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"))), "html", null, true);
+            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name")) > 120)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"), 0, 120) . "...")) : ($this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name"))), "html", null, true);
             // line 77
             echo "</h2>
         <p class=\"product_link\">

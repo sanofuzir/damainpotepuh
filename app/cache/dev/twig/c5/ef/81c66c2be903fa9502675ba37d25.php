@@ -40,7 +40,7 @@ class __TwigTemplate_c5ef81c66c2be903fa9502675ba37d25 extends Twig_Template
         // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_add_image"), "html", null, true);
         echo "\"><i class=\"icon-plus\"></i> Dodaj Sliko</a>
-<table class=\"table table-condensed table-hover\">
+<table style=\"background-color: #F9D49E;\" class=\"table table-condensed table-hover\">
   <thead>
     <tr>
       <th>Id</th>
@@ -58,12 +58,10 @@ class __TwigTemplate_c5ef81c66c2be903fa9502675ba37d25 extends Twig_Template
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
             // line 20
             echo "    <tr>
-      <td><a href=\"";
+      <td>";
             // line 21
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_images", array("id" => $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "id"))), "html", null, true);
-            echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "id"), "html", null, true);
-            echo "</a></td>
+            echo "</td>
       <td>";
             // line 22
             echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "description")) > 50)) ? ((twig_slice($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "description"), 0, 50) . "...")) : ($this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "description"))), "html", null, true);
@@ -72,18 +70,26 @@ class __TwigTemplate_c5ef81c66c2be903fa9502675ba37d25 extends Twig_Template
             // line 23
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "created"), "d.m.Y H:i:s"), "html", null, true);
             echo "</td>
-      <td><img src=\"";
-            // line 24
+      <td>
+          <a href=\"";
+            // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("galery/"), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "path"), "html", null, true);
-            echo "\" alt=\"slika\" width=\"50\"/></td>
+            echo "\" rel=\"lightbox\">
+            <img src=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("galery/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "path"), "html", null, true);
+            echo "\" alt=\"slika\" width=\"50\"/>
+          </a>
+      </td>
       <td><a href=\"";
-            // line 25
+            // line 29
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_edit_image", array("id" => $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "id"))), "html", null, true);
             echo "\" title=\"Uredi Sliko\">
               <i class=\"icon-edit\"></i>Uredi</a>&nbsp;
               <a href=\"";
-            // line 27
+            // line 31
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_admin_delete_image", array("id" => $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "id"))), "html", null, true);
             echo "\" class=\"confirmation\" title=\"Odstrani sliko\" data-confirmation=\"Ali si prepričan?\">
                   <i class=\"icon-trash\">Izbriši</i></a></td>
@@ -93,7 +99,7 @@ class __TwigTemplate_c5ef81c66c2be903fa9502675ba37d25 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 31
+        // line 35
         echo "  </tbody>
 </table>
 
@@ -112,6 +118,6 @@ class __TwigTemplate_c5ef81c66c2be903fa9502675ba37d25 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  97 => 31,  87 => 27,  82 => 25,  77 => 24,  73 => 23,  69 => 22,  63 => 21,  60 => 20,  56 => 19,  41 => 7,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  103 => 35,  93 => 31,  88 => 29,  81 => 26,  76 => 25,  71 => 23,  67 => 22,  63 => 21,  60 => 20,  56 => 19,  41 => 7,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

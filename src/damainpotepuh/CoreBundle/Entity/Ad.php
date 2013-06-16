@@ -59,7 +59,7 @@ class Ad
      *     message = "To polje ne sme biti prazno!"
      * )
      */
-     protected $email;
+    protected $email;
 
     /**
      * @var string

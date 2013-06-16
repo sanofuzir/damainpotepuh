@@ -2282,7 +2282,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../../Resources/assets/img/glyphicons-halflings.png");
+  background-image: url("../Resources/assets/img/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -2306,7 +2306,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("../../Resources/assets/img/glyphicons-halflings-white.png");
+  background-image: url("../Resources/assets/img/glyphicons-halflings-white.png");
 }
 
 .icon-glass {
@@ -7270,10 +7270,10 @@ a.badge:focus {
 @font-face
 {
     font-family: Avenir Next Regular;
-    src: url('../../Resources/assets/css/Avenir_Next.ttc');
+    src: url('../Resources/assets/css/Avenir_Next.ttc');
 }
 body {
-    background-image: url('../../bundles/damainpotepuhstatic/images/background.jpg');
+    background-image: url('../bundles/damainpotepuhstatic/images/background.jpg');
     font-family:"Avenir",Arial,Serif;
     font-size: 16px;
     font-style: normal;
@@ -7281,7 +7281,9 @@ body {
 }
 h1 {
     color: #473629;
-    text-shadow: 2px 2px #F5871F;
+    padding: 10px;
+    width: 200px;
+    text-shadow: none;
 }
 .damainpotepuh-footer {
     color: #F5871F;
@@ -7293,7 +7295,6 @@ h1 {
 #logo {
     width: 250px;
     position: absolute;
-    
 }
 
 /*Statične strani*/
@@ -7315,7 +7316,7 @@ h1 {
 .ad {
     width: 500px;
     height: 500px;
-    background-image: url('../../bundles/damainpotepuhstatic/images/ad_background2.jpg');
+    background-image: url('../bundles/damainpotepuhstatic/images/ad_background.jpg');
     margin-top: 50px;
     display: inline-table;
     margin-left: 50px;
@@ -7323,10 +7324,10 @@ h1 {
 .ad-text {
     padding: 50px 20px 20px 20px;
 }
-.ad img {
+.ad-img {
+    position: absolute;
     width: 150px;
-    padding-top: 50px;
-    padding-left: 30px;
+    margin: 10px 0px 0px 250px;
 }
 .ad_form {
     background-color: #F9D49E;
@@ -7441,7 +7442,6 @@ h1 {
     margin-top: -60px;
 }
 .product h2 {
-    font-size: 1.1em;
     margin-left: 230px;
 }
 .product p {
@@ -7631,4 +7631,35 @@ index-content p {
     background-color: #F9D49E;
     padding: 30px;
     width: 180px;
+}
+.damainpotepuh-carousel-caption {
+    background: none;
+}
+.damainpotepuh-carousel-caption h2 {
+    color: #fff;
+    margin-left: 200px;
+    margin-top: -250px;
+}
+
+/*News*/
+
+.news {
+    width: 95%;
+    margin-bottom: -80px;
+}
+.news h2 {
+    color: white;
+    padding-left: 10px;
+    font-size: 40px;
+    position: absolute;
+    margin-top: -70px;
+}
+.Singlenews {
+    background-color: #F9D49E;
+    padding: 10px;
+    border: 5px outset #F5871F;
+    margin-top: 10px;
+}
+.Singlenews h3 {
+    color: #473629;
 }

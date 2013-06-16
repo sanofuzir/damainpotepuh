@@ -78,6 +78,10 @@ class appProdProjectContainer extends Container
     {
         return $this->services['damainpotepuh.image_manager'] = new \damainpotepuh\CoreBundle\Models\ImageManager($this->get('doctrine.orm.default_entity_manager'), 'damainpotepuh\\CoreBundle\\Entity\\Image');
     }
+    protected function getDamainpotepuh_NewsManagerService()
+    {
+        return $this->services['damainpotepuh.news_manager'] = new \damainpotepuh\CoreBundle\Models\NewsManager($this->get('doctrine.orm.default_entity_manager'), 'damainpotepuh\\CoreBundle\\Entity\\News');
+    }
     protected function getDamainpotepuh_ProductManagerService()
     {
         return $this->services['damainpotepuh.product_manager'] = new \damainpotepuh\CoreBundle\Models\ProductManager($this->get('doctrine.orm.default_entity_manager'), 'damainpotepuh\\CoreBundle\\Entity\\Product');
@@ -110,7 +114,7 @@ class appProdProjectContainer extends Container
     }
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
-        require_once '/Users/sanofuzir/Sites/damainpotepuh/app/cache/prod/jms_diextra/doctrine/EntityManager_519e7e61922b0.php';
+        require_once '/Users/sanofuzir/Sites/damainpotepuh/app/cache/prod/jms_diextra/doctrine/EntityManager_51b5d72c82958.php';
         $a = new \Doctrine\Common\Cache\ArrayCache();
         $a->setNamespace('sf2orm_default_ff65d4a648c4e1d76289bb021491c6ac');
         $b = new \Doctrine\Common\Cache\ArrayCache();
@@ -136,7 +140,7 @@ class appProdProjectContainer extends Container
         $f->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
         $g = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $f);
         $this->get('doctrine.orm.default_manager_configurator')->configure($g);
-        return $this->services['doctrine.orm.default_entity_manager'] = new \EntityManager519e7e61922b0_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager($g, $this);
+        return $this->services['doctrine.orm.default_entity_manager'] = new \EntityManager51b5d72c82958_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager($g, $this);
     }
     protected function getDoctrine_Orm_DefaultManagerConfiguratorService()
     {
@@ -668,7 +672,7 @@ class appProdProjectContainer extends Container
         $m->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
         $n = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($l, array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
         $n->setProviderKey('main');
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($k, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username_email')), 'main', $a, $c), 2 => $m, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $l, 'main', $n, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $l, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/login_check', 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, $this->get('form.csrf_provider')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '519e7e618324d', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $k, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $l, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $l, '/login', false), NULL, NULL, $a));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($k, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username_email')), 'main', $a, $c), 2 => $m, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $l, 'main', $n, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $l, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/login_check', 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, $this->get('form.csrf_provider')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '51b5d72c54633', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $k, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $l, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $l, '/login', false), NULL, NULL, $a));
     }
     protected function getSecurity_Rememberme_ResponseListenerService()
     {
@@ -1079,7 +1083,7 @@ class appProdProjectContainer extends Container
     }
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username_email'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('519e7e618324d')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username_email'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('51b5d72c54633')), true);
         $instance->setEventDispatcher($this->get('event_dispatcher'));
         return $instance;
     }
@@ -1147,7 +1151,7 @@ class appProdProjectContainer extends Container
             'kernel.root_dir' => '/Users/sanofuzir/Sites/damainpotepuh/app',
             'kernel.environment' => 'prod',
             'kernel.debug' => false,
-            'kernel.name' => 'ap_',
+            'kernel.name' => 'app',
             'kernel.cache_dir' => '/Users/sanofuzir/Sites/damainpotepuh/app/cache/prod',
             'kernel.logs_dir' => '/Users/sanofuzir/Sites/damainpotepuh/app/logs',
             'kernel.bundles' => array(
@@ -1648,8 +1652,8 @@ class appProdProjectContainer extends Container
             'jms_di_extra.doctrine_integration' => true,
             'jms_di_extra.cache_warmer.controller_file_blacklist' => array(
             ),
-            'jms_di_extra.doctrine_integration.entity_manager.file' => '/Users/sanofuzir/Sites/damainpotepuh/app/cache/prod/jms_diextra/doctrine/EntityManager_519e7e61922b0.php',
-            'jms_di_extra.doctrine_integration.entity_manager.class' => 'EntityManager519e7e61922b0_546a8d27f194334ee012bfe64f629947b07e4919\\__CG__\\Doctrine\\ORM\\EntityManager',
+            'jms_di_extra.doctrine_integration.entity_manager.file' => '/Users/sanofuzir/Sites/damainpotepuh/app/cache/prod/jms_diextra/doctrine/EntityManager_51b5d72c82958.php',
+            'jms_di_extra.doctrine_integration.entity_manager.class' => 'EntityManager51b5d72c82958_546a8d27f194334ee012bfe64f629947b07e4919\\__CG__\\Doctrine\\ORM\\EntityManager',
             'security.secured_services' => array(
             ),
             'security.access.method_interceptor.class' => 'JMS\\SecurityExtraBundle\\Security\\Authorization\\Interception\\MethodSecurityInterceptor',
@@ -1699,6 +1703,8 @@ class appProdProjectContainer extends Container
             'damainpotepuh.ad_manager.class' => 'damainpotepuh\\CoreBundle\\Models\\AdManager',
             'damainpotepuh.entity.subcategory.class' => 'damainpotepuh\\CoreBundle\\Entity\\Subcategory',
             'damainpotepuh.subcategory_manager.class' => 'damainpotepuh\\CoreBundle\\Models\\SubcategoryManager',
+            'damainpotepuh.entity.news.class' => 'damainpotepuh\\CoreBundle\\Entity\\News',
+            'damainpotepuh.news_manager.class' => 'damainpotepuh\\CoreBundle\\Models\\NewsManager',
             'fos_user.validator.password.class' => 'FOS\\UserBundle\\Validator\\PasswordValidator',
             'fos_user.validator.unique.class' => 'FOS\\UserBundle\\Validator\\UniqueValidator',
             'fos_user.security.interactive_login_listener.class' => 'FOS\\UserBundle\\EventListener\\LastLoginListener',
