@@ -1,0 +1,14 @@
+{% extends 'damainpotepuhStaticBundle::layout.html.twig' %}
+
+{% block title %}Video{% endblock %}
+
+{% block content %}
+<h2>Video</h2>
+<form class="ad_form" action="{{ video.id ? path('_admin_edit_video', {'id': video.id}) : path('_admin_add_video') }}" method="post" {{ form_enctype(form) }} novalidate>
+    {{ form_widget(form) }}
+    <!--div class="form-actions"-->
+        <input type="submit" name="save" value="Shrani" class="btn btn-primary">
+    <!--/div-->
+</form>
+
+{% endblock %}

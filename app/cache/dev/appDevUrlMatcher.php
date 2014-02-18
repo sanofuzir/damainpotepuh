@@ -88,42 +88,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            // _assetic_2f5d228
-            if ($pathinfo === '/js/scripts.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '2f5d228',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_2f5d228',);
-            }
-
-            if (0 === strpos($pathinfo, '/js/scripts_')) {
-                if (0 === strpos($pathinfo, '/js/scripts_jquery-1.')) {
-                    // _assetic_2f5d228_0
-                    if ($pathinfo === '/js/scripts_jquery-1.9.1_1.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '2f5d228',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_2f5d228_0',);
-                    }
-
-                    // _assetic_2f5d228_1
-                    if ($pathinfo === '/js/scripts_jquery-1.7.2.min_2.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '2f5d228',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_2f5d228_1',);
-                    }
-
-                }
-
-                // _assetic_2f5d228_2
-                if ($pathinfo === '/js/scripts_lightbox_3.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '2f5d228',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_2f5d228_2',);
-                }
-
-                // _assetic_2f5d228_3
-                if ($pathinfo === '/js/scripts_bootstrap_4.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '2f5d228',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_2f5d228_3',);
-                }
-
-                // _assetic_2f5d228_4
-                if ($pathinfo === '/js/scripts_part_5_script_1.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '2f5d228',  'pos' => 4,  '_format' => 'js',  '_route' => '_assetic_2f5d228_4',);
-                }
-
-            }
-
         }
 
         if (0 === strpos($pathinfo, '/css/style')) {
@@ -444,6 +408,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/admin/video')) {
+                // _admin_videos
+                if ($pathinfo === '/admin/video') {
+                    return array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\VideoController::videoAction',  '_route' => '_admin_videos',);
+                }
+
+                // _admin_delete_video
+                if (0 === strpos($pathinfo, '/admin/video/delete') && preg_match('#^/admin/video/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_delete_video')), array (  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\VideoController::deleteVideoAction',));
+                }
+
+                // _admin_add_video
+                if ($pathinfo === '/admin/video/add') {
+                    return array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\VideoController::editVideoAction',  '_route' => '_admin_add_video',);
+                }
+
+                // _admin_edit_video
+                if (0 === strpos($pathinfo, '/admin/video/edit') && preg_match('#^/admin/video/edit(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_admin_edit_video')), array (  'id' => NULL,  '_controller' => 'damainpotepuh\\AdminBundle\\Controller\\VideoController::editVideoAction',));
+                }
+
+            }
+
         }
 
         // _zmenkarije
@@ -678,6 +665,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
+
+        // _video
+        if ($pathinfo === '/video') {
+            return array (  '_controller' => 'StaticBundle:Default:video',  '_route' => '_video',);
+        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

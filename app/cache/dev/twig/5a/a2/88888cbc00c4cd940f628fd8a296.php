@@ -28,7 +28,6 @@ class __TwigTemplate_5aa288888cbc00c4cd940f628fd8a296 extends Twig_Template
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo "Home";
     }
 
     // line 5
@@ -162,6 +161,6 @@ class __TwigTemplate_5aa288888cbc00c4cd940f628fd8a296 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  147 => 57,  138 => 54,  134 => 53,  130 => 52,  127 => 51,  123 => 50,  111 => 41,  107 => 40,  100 => 36,  96 => 35,  89 => 31,  85 => 30,  78 => 26,  74 => 25,  67 => 21,  63 => 20,  56 => 16,  52 => 15,  41 => 7,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  146 => 57,  137 => 54,  133 => 53,  129 => 52,  126 => 51,  122 => 50,  110 => 41,  106 => 40,  99 => 36,  95 => 35,  88 => 31,  84 => 30,  77 => 26,  73 => 25,  66 => 21,  62 => 20,  55 => 16,  51 => 15,  40 => 7,  37 => 6,  34 => 5,  29 => 3,);
     }
 }

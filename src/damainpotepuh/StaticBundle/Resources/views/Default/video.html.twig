@@ -1,0 +1,19 @@
+{% extends 'damainpotepuhStaticBundle::layout.html.twig' %}
+
+{% block title %}Video{% endblock %}
+
+{% block content %}
+
+<h1 style="text-shadow: none; width: 300px;">Video Galerija</h1>
+{#
+<div class="gallery-container">
+
+    {% for video in videos %}
+        <a style="margin-left: 30px;" href="{{video.link }}" target="_blank">
+            <img src="{{ asset('video/')}}{{video.path }}" alt="video" width="250" height="350"/>
+        </a>
+    {% endfor %}
+
+</div>
+#}
+{% endblock %}

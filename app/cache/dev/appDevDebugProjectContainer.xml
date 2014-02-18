@@ -419,7 +419,7 @@
     <parameter key="assetic.write_to">/Users/sanofuzir/Sites/damainpotepuh/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
-    <parameter key="assetic.node.bin">/usr/local/bin/node</parameter>
+    <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
@@ -512,8 +512,8 @@
     <parameter key="jms_di_extra.disable_grep">false</parameter>
     <parameter key="jms_di_extra.doctrine_integration">true</parameter>
     <parameter key="jms_di_extra.cache_warmer.controller_file_blacklist" type="collection"/>
-    <parameter key="jms_di_extra.doctrine_integration.entity_manager.file">/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_51bd96813deeb.php</parameter>
-    <parameter key="jms_di_extra.doctrine_integration.entity_manager.class">EntityManager51bd96813deeb_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager</parameter>
+    <parameter key="jms_di_extra.doctrine_integration.entity_manager.file">/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_530250eb27b31.php</parameter>
+    <parameter key="jms_di_extra.doctrine_integration.entity_manager.class">EntityManager530250eb27b31_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager</parameter>
     <parameter key="security.secured_services" type="collection"/>
     <parameter key="security.access.method_interceptor.class">JMS\SecurityExtraBundle\Security\Authorization\Interception\MethodSecurityInterceptor</parameter>
     <parameter key="security.access.method_access_control" type="collection"/>
@@ -562,6 +562,8 @@
     <parameter key="damainpotepuh.subcategory_manager.class">damainpotepuh\CoreBundle\Models\SubcategoryManager</parameter>
     <parameter key="damainpotepuh.entity.news.class">damainpotepuh\CoreBundle\Entity\News</parameter>
     <parameter key="damainpotepuh.news_manager.class">damainpotepuh\CoreBundle\Models\NewsManager</parameter>
+    <parameter key="damainpotepuh.entity.video.class">damainpotepuh\CoreBundle\Entity\Video</parameter>
+    <parameter key="damainpotepuh.video_manager.class">damainpotepuh\CoreBundle\Models\VideoManager</parameter>
     <parameter key="fos_user.validator.password.class">FOS\UserBundle\Validator\PasswordValidator</parameter>
     <parameter key="fos_user.validator.unique.class">FOS\UserBundle\Validator\UniqueValidator</parameter>
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
@@ -1711,7 +1713,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>51bd9680a134e</argument>
+            <argument>530250ea41a44</argument>
           </service>
         </argument>
       </argument>
@@ -2009,7 +2011,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>51bd9680a134e</argument>
+            <argument>530250ea41a44</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -2985,8 +2987,8 @@
     <service id="doctrine.orm.default_manager_configurator" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator">
       <argument type="collection"/>
     </service>
-    <service id="doctrine.orm.default_entity_manager" class="EntityManager51bd96813deeb_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
-      <file>/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_51bd96813deeb.php</file>
+    <service id="doctrine.orm.default_entity_manager" class="EntityManager530250eb27b31_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
+      <file>/Users/sanofuzir/Sites/damainpotepuh/app/cache/dev/jms_diextra/doctrine/EntityManager_530250eb27b31.php</file>
       <argument type="service">
         <service class="Doctrine\ORM\EntityManager" factory-method="create" public="false">
           <argument type="service" id="doctrine.dbal.default_connection"/>
@@ -3257,6 +3259,10 @@
     <service id="damainpotepuh.news_manager" class="damainpotepuh\CoreBundle\Models\NewsManager">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument>damainpotepuh\CoreBundle\Entity\News</argument>
+    </service>
+    <service id="damainpotepuh.video_manager" class="damainpotepuh\CoreBundle\Models\VideoManager">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument>damainpotepuh\CoreBundle\Entity\Video</argument>
     </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>

@@ -12,6 +12,8 @@ use damainpotepuh\CoreBundle\Entity\Image;
 use damainpotepuh\CoreBundle\Models\ImageManager;
 use damainpotepuh\CoreBundle\Entity\News;
 use damainpotepuh\CoreBundle\Models\NewsManager;
+use damainpotepuh\CoreBundle\Entity\Video;
+use damainpotepuh\CoreBundle\Models\VideoManager;
 
 class DefaultController extends Controller
 {
@@ -23,6 +25,14 @@ class DefaultController extends Controller
     private function getImageManager()
     {
         return $this->container->get('damainpotepuh.image_manager');
+    }
+    
+    /**
+     * @return VideoManager
+     */
+    private function getVideoManager()
+    {
+        return $this->container->get('damainpotepuh.video_manager');
     }
     
     /**
@@ -62,6 +72,17 @@ class DefaultController extends Controller
         $images = $this->getImageManager()->findAllImages();
 
         return array( 'images' => $images);
+    }
+    
+    /**
+     * @Route("/video", name="_video")
+     * @Template()
+     */
+    public function videoAction()
+    {
+       // $videos = $this->getVideoManager()->findAllVideos();
+        $videos = null;
+        return array( 'videos' => $videos);
     }
     
     /**

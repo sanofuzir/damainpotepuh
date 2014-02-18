@@ -1,0 +1,38 @@
+{% extends 'damainpotepuhStaticBundle::layout.html.twig' %}
+
+{% block title %}Video{% endblock %}
+
+{% block content %}
+<h2>Video</h2>
+<a class="btn btn-small pull-right" href="{{ path('_admin_add_video') }}"><i class="icon-plus"></i> Dodaj Video</a>
+<table style="background-color: #F9D49E;" class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>link</th>
+      <th>datum vnosa</th>
+      <th>Slika</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for video in videos %}
+    <tr>
+      <td>{{ video.id }}</td>
+      <td>{{ video.link }}</td>
+      <td>{{ video.created|date('d.m.Y H:i:s') }}</td>
+      <td>
+          <a href="{{ asset('video/')}}{{video.path }}" rel="lightbox">
+            <img src="{{ asset('video/')}}{{video.path }}" alt="slika" width="50"/>
+          </a>
+      </td>
+      <td><a href="{{ path('_admin_edit_video', {'id': video.id}) }}" title="Uredi video">
+              <i class="icon-edit"></i>Uredi</a>&nbsp;
+              <a href="{{ path('_admin_delete_video', {'id': video.id } ) }}" class="confirmation" title="Odstrani video" data-confirmation="Ali si prepričan?">
+                  <i class="icon-trash">Izbriši</i></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
