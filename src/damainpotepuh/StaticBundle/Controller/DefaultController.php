@@ -80,8 +80,8 @@ class DefaultController extends Controller
      */
     public function videoAction()
     {
-       // $videos = $this->getVideoManager()->findAllVideos();
-        $videos = null;
+       $videos = $this->getVideoManager()->findAllVideos();
+       
         return array( 'videos' => $videos);
     }
     
