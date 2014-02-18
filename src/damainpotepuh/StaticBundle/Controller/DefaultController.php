@@ -75,7 +75,7 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/video", name="_video")
+     * @Route("/video", name="_videos")
      * @Template()
      */
     public function videoAction()

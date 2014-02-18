@@ -37,6 +37,33 @@ class __TwigTemplate_cc4f625141d36d0fb5ef9ce82cf10ece extends Twig_Template
         // line 6
         echo "
 <h1 style=\"text-shadow: none; width: 300px;\">Video Galerija</h1>
+
+<div class=\"gallery-container\">
+
+    ";
+        // line 11
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["videos"]) ? $context["videos"] : $this->getContext($context, "videos")));
+        foreach ($context['_seq'] as $context["_key"] => $context["video"]) {
+            // line 12
+            echo "        <a style=\"margin-left: 30px;\" href=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["video"]) ? $context["video"] : $this->getContext($context, "video")), "link"), "html", null, true);
+            echo "\" target=\"_blank\">
+            <img src=\"";
+            // line 13
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("video/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["video"]) ? $context["video"] : $this->getContext($context, "video")), "path"), "html", null, true);
+            echo "\" alt=\"video\" width=\"250\" height=\"350\"/>
+        </a>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['video'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 16
+        echo "
+</div>
+
 ";
     }
 
@@ -52,6 +79,6 @@ class __TwigTemplate_cc4f625141d36d0fb5ef9ce82cf10ece extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  38 => 6,  35 => 5,  29 => 3,);
+        return array (  64 => 16,  54 => 13,  49 => 12,  45 => 11,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

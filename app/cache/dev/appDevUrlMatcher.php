@@ -470,6 +470,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::galleryAction',  '_route' => '_galerija',);
         }
 
+        // _videos
+        if ($pathinfo === '/video') {
+            return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::videoAction',  '_route' => '_videos',);
+        }
+
         // _kontakt
         if ($pathinfo === '/kontakt') {
             return array (  '_controller' => 'damainpotepuh\\StaticBundle\\Controller\\DefaultController::contactAction',  '_route' => '_kontakt',);

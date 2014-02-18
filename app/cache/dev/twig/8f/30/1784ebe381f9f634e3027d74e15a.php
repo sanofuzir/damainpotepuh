@@ -204,7 +204,7 @@ class __TwigTemplate_8f301784ebe381f9f634e3027d74e15a extends Twig_Template
         echo "\" style=\"color: #fff;\">GALERIJA</a></li>
                 <li style=\"margin-left: 10px;\"><a href=\"";
         // line 110
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_video"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_videos"), "html", null, true);
         echo "\" style=\"color: #fff;\">VIDEO</a></li>
                 <li style=\"margin-left: 10px;\"><a href=\"";
         // line 111
